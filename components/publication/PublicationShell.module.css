@@ -1,0 +1,97 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.meshWrap {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(20px, 5vw, 64px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+}
+
+.brandLink:hover {
+  color: inherit;
+}
+
+.logo {
+  display: block;
+  width: 32px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(12px, 2.5vw, 24px);
+  font-size: 13px;
+}
+
+.nav a {
+  color: var(--text-body);
+}
+
+.nav a:hover,
+.nav a[data-active="true"] {
+  color: var(--text-primary);
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 24px clamp(20px, 5vw, 64px) 32px;
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.footer a {
+  color: var(--text-body);
+}

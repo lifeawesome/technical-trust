@@ -41,9 +41,14 @@ export default function ComingSoonPage() {
           <SiteLogo className={styles.logo} />
           <span className={styles.brandName}>Technical Trust</span>
         </div>
-        <Link href="/about" className={styles.aboutLink}>
-          About Dan →
-        </Link>
+        <nav className={styles.headerNav}>
+          <Link href="/essays" className={styles.aboutLink}>
+            Essays
+          </Link>
+          <Link href="/about" className={styles.aboutLink}>
+            About Dan →
+          </Link>
+        </nav>
       </header>
 
       <main className={styles.main}>
@@ -79,6 +84,7 @@ export default function ComingSoonPage() {
           </section>
 
           <section
+            id="subscribe"
             className={`${styles.subscribeSection} ${styles.enter} ${styles.enterDelay4}`}
             aria-labelledby="subscribe-label"
           >
