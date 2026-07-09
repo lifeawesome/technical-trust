@@ -1,0 +1,75 @@
+{/*
+  Copy this file to a new slug, e.g. content/essays/my-first-essay.mdx
+  Set draft: false when you're ready to publish.
+*/}
+
+export const meta = {
+  title: "What Is Technical Trust?",
+  description:
+    "Technical trust is the confidence a person needs to make a high-stakes decision about a system they don't fully understand. Here's what it's made of — and why it can be learned.",
+  publishedAt: "2026-07-09",
+  tags: ["technical trust", "framework", "decision-making", "vendor evaluation"],
+  draft: false,
+};
+
+Somewhere right now, a person is about to make an expensive decision about a system they cannot fully understand.
+
+Maybe it's a VP signing off on a platform migration she'll never personally inspect. Maybe it's a founder choosing between two vendors whose demos looked identical. Maybe it's an engineering leader deciding whether the consultant across the table actually knows what he claims to know. The details vary; the situation doesn't. Modern technology decisions are almost always made by people who cannot verify, firsthand, the thing they're betting on.
+
+This is not a failure of intelligence. It's the basic condition of working with complex systems. No one — not the buyer, not the executive, and frankly not most of the engineers — holds the whole system in their head. So every meaningful technology decision is really a decision about who and what to believe. The migration succeeds or fails long before the first line of code moves. It succeeds or fails at the moment someone decides whose account of reality to trust.
+
+I've spent twenty-six years in software watching this moment go wrong from every seat at the table. I've been the engineer who was right but not believed. I've watched smart buyers get burned by confident vendors. I've seen deals die and adoptions stall not because the technology was wrong, but because trust was never actually built — just assumed, performed, or skipped entirely.
+
+We treat this problem as charisma. As "soft skills." As something salespeople have and engineers lack. I think that's wrong. I think technical trust is a system — with parts you can name, failure modes you can catch, and moves you can learn. This essay is my attempt to name the parts.
+
+## A definition
+
+Technical trust is the confidence a person needs to make a high-stakes decision about a system they don't fully understand.
+
+Every clause in that sentence is doing work. Confidence a person needs — trust is something the decision-maker has to feel, not something the expert gets to declare. High-stakes decision — nobody needs trust to pick a font; trust becomes the bottleneck when the cost of being wrong is real. A system they don't fully understand — this is the part we're embarrassed to say out loud, and the part that makes everything else necessary. If full understanding were possible, trust would be irrelevant. It isn't, so trust is everything.
+
+Notice what technical trust is not. It is not rapport — people buy from vendors they like and regret it constantly. It is not credentials — a résumé tells you someone was trusted before, not whether they deserve it now. And it is not confidence, which is the cheapest signal in the industry and the easiest to fake. Some of the least trustworthy technical claims I've ever heard were delivered with total confidence, and some of the most trustworthy began with "I'm not sure — let me find out."
+
+So if it isn't charm, credentials, or confidence, what is it made of?
+
+## The four pillars
+
+In every technical relationship that works — vendor and buyer, architect and executive, engineer and stakeholder — I find the same four things present. In every one that fails, at least one is missing.
+
+1. Competence. You actually know the system. This one is obvious, necessary, and wildly insufficient. It's where most technical people stop, and it's why so many of them are frustrated: they're the most knowledgeable person in the room and somehow the least believed. Competence is the entry fee, not the game.
+
+2. Comprehension. You can make the other person understand it. Not dumbed down — translated. There is a moment in every successful technical relationship when the buyer can explain the architecture to her own boss, in her own words, and get it basically right. That moment is when trust jumps, because she's no longer relying purely on your account of the system; she has one of her own. An expert who cannot produce that moment isn't providing understanding — he's asking for faith. People are right to withhold it.
+
+3. Candor. You volunteer the limitations before they're discovered. This is the counterintuitive engine of the entire framework. Every system has weaknesses; your counterpart knows this, which means a presentation with no weaknesses in it doesn't read as strength — it reads as concealment. The fastest way to be believed about what your system does well is to be forthcoming about what it does badly. "This will handle your volume easily, but the reporting module will frustrate your analysts" is a sentence that builds more trust than an hour of highlights, because it proves you'll tell them the inconvenient thing. Once you've proven that, everything else you say gets upgraded.
+
+4. Consistency. The demo matches the docs, the docs match the deployment, and what you said in March is still true in June. Trust compounds through repeated confirmation: each time reality matches your account of it, your account gets cheaper to believe. And it collapses asymmetrically — one surprise erases ten accurate calls, because a single discovered discrepancy forces your counterpart to re-audit everything you've ever told them.
+
+Score any technical relationship against these four and the diagnosis usually writes itself. The brilliant engineer nobody listens to? Competence without comprehension. The vendor whose deals keep dying in legal review? Probably candor — something surfaced late that should have been volunteered early. The consultant who was great in the sales cycle and disappointing in delivery? Consistency. The framework doesn't make trust easy. It makes it legible — and legible problems can be worked.
+
+## Where trust is actually won and lost
+
+The four pillars are what trust is made of. But trust is built in time, across a lifecycle, and each stage has its own battleground.
+
+In discovery, trust is won by listening — specifically, by asking the question the buyer didn't know to ask. Nothing signals competence faster than understanding someone's problem better than they've articulated it. And nothing kills trust earlier than the expert who arrives with the answer before hearing the question.
+
+In architecture — the proposal, the design, the plan — trust is won through candor about tradeoffs. Every design decision costs something. The expert who presents a plan with no costs is presenting a fiction, and sophisticated buyers can smell it.
+
+In adoption — after the signature, after the deploy — is where most technical trust actually dies. The gap between "delivered" and "actually used" is a graveyard of technically successful projects. Trust built during the sale is a loan; adoption is where it gets repaid or defaulted on.
+
+Most of what this site will publish lives in these three stages: how to run them well when you're the expert, and how to see them clearly when you're the one deciding.
+
+## Why this matters more right now
+
+The trust gap is widening, fast. Systems keep getting more complex while decision timelines get shorter. And the arrival of AI has pushed the situation to its logical extreme: organizations are now making consequential decisions about systems that even their builders can't fully explain. The percentage of any technology decision that rests on verification is shrinking. The percentage that rests on trust is growing. We are all, increasingly, that person at the top of this essay — deciding about things we cannot inspect.
+
+Which means the skills this site is about — building warranted trust when you're the expert, and detecting it when you're the decider — are quietly becoming the core competency of working with technology at all.
+
+## What happens here
+
+Technical Trust is a working resource, written in public. The core guide develops the framework — the pillars, the lifecycle, and a catalog of named failure patterns you'll start seeing everywhere once you can name them. Around it, field guides tackle specific decisions: how to watch a vendor demo without being fooled, how to evaluate a consultant, how to plan a migration, when to build versus buy.
+
+One belief runs under all of it: trust between technical and non-technical people isn't a personality trait. It's a practice. It can be taught, learned, tested, and — when someone hasn't earned it — politely withheld.
+
+If you've ever had to make a big decision about a system you couldn't fully understand, or been the expert who deserved to be believed and wasn't, this is for you.
+
+— Dan
