@@ -18,7 +18,12 @@ export default function ContactCta() {
               <a href={`mailto:${CONTACT_EMAIL}`} className={styles.primary}>
                 Contact Me
               </a>
-              <a href={RESUME_HREF} className={styles.secondary}>
+              <a
+                href={RESUME_HREF}
+                className={styles.secondary}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 View Resume
               </a>
             </div>

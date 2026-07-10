@@ -2,7 +2,7 @@ export const SITE_URL = "https://technicaltrust.org";
 
 export const CONTACT_EMAIL = "dan.davidson@gmail.com";
 export const LINKEDIN_URL = "https://linkedin.com/in/dandd";
-export const RESUME_HREF = "#"; // TODO: link to hosted PDF
+export const RESUME_HREF = "/dan-davidson-resume.pdf";
 
 export const comingSoon = {
   metadata: {

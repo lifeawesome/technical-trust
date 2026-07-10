@@ -24,7 +24,13 @@ export default function Hero() {
             into business outcomes.
           </p>
           <div className={styles.actions}>
-            <a href={RESUME_HREF} className={styles.actionPrimary} data-hero-action>
+            <a
+              href={RESUME_HREF}
+              className={styles.actionPrimary}
+              data-hero-action
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Resume
             </a>
             <a href="#work" className={styles.actionSecondary} data-hero-action>
@@ -46,7 +52,7 @@ export default function Hero() {
 
         <div className={styles.portraitColumn}>
           <div className={styles.portraitFrame} data-hero-portrait>
-            <Image src="/dan-headshot.png" alt="Dan Davidson" fill priority sizes="340px" />
+            <Image src="/dan-headshot-2.png" alt="Dan Davidson" fill priority sizes="340px" />
             <div className={styles.portraitShade} />
           </div>
 

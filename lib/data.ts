@@ -1,5 +1,5 @@
 export const CONTACT_EMAIL = "dan.davidson@gmail.com";
-export const RESUME_HREF = "#";
+export const RESUME_HREF = "/dan-davidson-resume.pdf";
 
 export const keywords = [
   "Enterprise Solutions",
