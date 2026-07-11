@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./ContactCta.module.css";
 import Reveal from "./Reveal";
 import { CONTACT_EMAIL, RESUME_HREF } from "@/lib/data";
@@ -27,6 +28,9 @@ export default function ContactCta() {
                 View Resume
               </a>
             </div>
+            <p className={styles.manifestoLink}>
+              <Link href="/manifesto">Read the Technical Trust Manifesto →</Link>
+            </p>
           </div>
         </section>
       </Reveal>

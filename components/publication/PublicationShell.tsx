@@ -5,7 +5,7 @@ import styles from "./PublicationShell.module.css";
 
 type PublicationShellProps = {
   children: React.ReactNode;
-  activeNav?: "essays" | "newsletter";
+  activeNav?: "essays" | "newsletter" | "manifesto";
 };
 
 export default function PublicationShell({
@@ -28,6 +28,12 @@ export default function PublicationShell({
         <nav className={styles.nav} aria-label="Publication">
           <Link href="/essays" data-active={activeNav === "essays" || undefined}>
             Essays
+          </Link>
+          <Link
+            href="/manifesto"
+            data-active={activeNav === "manifesto" || undefined}
+          >
+            Manifesto
           </Link>
           <Link
             href="/newsletter"

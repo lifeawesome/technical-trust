@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./Projects.module.css";
 import Reveal from "./Reveal";
 import { projects } from "@/lib/data";
@@ -12,16 +11,13 @@ export default function Projects() {
           <h2 className="section-heading">Things I&apos;ve built to prove the point</h2>
         </div>
         <div className={styles.grid}>
-          {projects.map((proj) => (
+          {projects.map((proj, index) => (
             <div key={proj.name} className={styles.card} data-reveal-child>
-              <div className={styles.shot}>
-                <Image
-                  src={proj.image}
-                  alt={`${proj.name} preview`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className={styles.shotImage}
-                />
+              <div className={styles.header}>
+                <span className={`${styles.index} mono`}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className={`${styles.lead} mono`}>{proj.stack[0]}</span>
               </div>
               <div className={styles.body}>
                 <h3 className={styles.name}>{proj.name}</h3>

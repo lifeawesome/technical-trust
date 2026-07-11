@@ -15,6 +15,10 @@ export const comingSoon = {
     "Most people making technology decisions can't fully understand the systems they're betting on.",
   subhead:
     "Technical Trust is a resource for exactly that moment — guides on evaluating vendors, sitting through demos, planning migrations, and making confident decisions about complex systems. Written by a practitioner, free to read, launching soon.",
+  manifesto: {
+    body: "Information is no longer scarce. Attention, judgment, and trust are. The Technical Trust Manifesto is the commitment behind this work — why trust is the scarcest resource in technology, and why the people who help others make confident decisions will matter more than those who simply have answers.",
+    linkLabel: "Read the manifesto",
+  },
   whatsComing: [
     {
       title: "The Guide to Technical Trust",
@@ -155,10 +159,16 @@ export const about = {
     heading: "Things I've built to prove the point",
     items: [
       {
-        name: "Inventory Oracle",
+        name: "Custom Shopify Apps",
         proves:
-          "A Shopify app built end-to-end: product design, API architecture, merchant-facing UX.",
-        stack: ["Shopify API", "Node", "React"],
+          "Merchant-facing Shopify apps in TypeScript — Inventory Oracle, Cart Companion, and Shopification SEO — from product design through API architecture and UX.",
+        stack: ["TypeScript", "Shopify API", "React"],
+      },
+      {
+        name: "Pluralsight Enablement Tools",
+        proves:
+          "Automation tools that simplified building learning plans for enterprise customers — productized enablement after the sale.",
+        stack: ["Enablement", "Automation", "Enterprise"],
       },
       {
         name: "Shopification Studio — Launch Assist",
@@ -175,8 +185,8 @@ export const about = {
       {
         name: "DietAgent",
         proves:
-          "An AI health-tracking integration built on Model Context Protocol — current, hands-on work with the emerging AI tooling stack.",
-        stack: ["MCP", "AI Integration", "APIs"],
+          "An AI health-tracking integration built on Model Context Protocol — TypeScript backend and native iOS/Swift client.",
+        stack: ["LLM APIs", "TypeScript", "iOS / Swift"],
       },
     ],
   },

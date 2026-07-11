@@ -95,6 +95,10 @@
   animation-delay: 0.32s;
 }
 
+.enterDelay5 {
+  animation-delay: 0.4s;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -122,6 +126,21 @@
   color: var(--text-body);
   max-width: 42rem;
   margin: 0;
+}
+
+.manifesto {
+  font-size: clamp(15px, 1.45vw, 16.5px);
+  line-height: 1.7;
+  color: var(--text-heading);
+  max-width: 40rem;
+  margin: 28px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.manifestoLink {
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .comingSection {
@@ -214,7 +233,8 @@
   .enterDelay1,
   .enterDelay2,
   .enterDelay3,
-  .enterDelay4 {
+  .enterDelay4,
+  .enterDelay5 {
     animation: none;
   }
 }

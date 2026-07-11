@@ -22,16 +22,32 @@
   padding: 0;
 }
 
-.shot {
-  position: relative;
-  height: 120px;
-  background: #141d31;
-  overflow: hidden;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 8%, transparent),
+    transparent 55%
+  );
 }
 
-.shotImage {
-  object-fit: cover;
-  object-position: center;
+.index {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.lead {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .body {

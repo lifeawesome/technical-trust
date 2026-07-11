@@ -108,30 +108,32 @@ export const timeline = [
 export const projects = [
   {
     name: "Shopification Studio",
-    image: "/featured/shopification.png",
     proves: "Proves I can ship inside a platform ecosystem.",
     desc: "A toolkit for merchants migrating storefronts onto Shopify without losing custom logic.",
     stack: ["Shopify API", "React", "Liquid"],
   },
   {
-    name: "Inventory Oracle",
-    image: "/featured/inventory-oracle.png",
-    proves: "Proves I can model a solution for a messy operational reality.",
-    desc: "Forecasting tool that reconciles multi-warehouse inventory against demand signals.",
-    stack: ["Python", "Postgres", "Forecasting"],
+    name: "Custom Shopify Apps",
+    proves: "Proves I can ship production apps end-to-end inside a platform ecosystem.",
+    desc: "Merchant-facing Shopify apps built in TypeScript — including Inventory Oracle, Cart Companion, and Shopification SEO — from product design through API architecture and UX.",
+    stack: ["TypeScript", "Shopify API", "React"],
+  },
+  {
+    name: "Pluralsight Enablement Tools",
+    proves: "Proves I can productize enablement so enterprise adoption scales beyond one-off consulting.",
+    desc: "Automation tools that simplified building learning plans for enterprise customers — turning a manual, consultant-heavy process into something repeatable after the sale closed.",
+    stack: ["Enablement", "Automation", "Enterprise"],
   },
   {
     name: "UtahDirect",
-    image: "/featured/utah-direct.png",
     proves: "Proves I can navigate regulated, high-stakes systems.",
     desc: "A civic services directory built for accuracy and accessibility under real constraints.",
     stack: ["Next.js", "Accessibility", "GIS"],
   },
   {
     name: "DietAgent",
-    image: "/featured/diet-agent.png",
     proves: "Proves I can design for trust in an AI-assisted workflow.",
-    desc: "An AI nutrition planner that shows its reasoning instead of just handing down answers.",
-    stack: ["LLM APIs", "TypeScript", "UX"],
+    desc: "An AI nutrition planner that shows its reasoning instead of just handing down answers — including a native iOS client.",
+    stack: ["LLM APIs", "TypeScript", "iOS / Swift"],
   },
 ];

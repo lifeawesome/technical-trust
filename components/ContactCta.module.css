@@ -50,6 +50,20 @@
   font-size: 14.5px;
 }
 
+.manifestoLink {
+  margin: 28px 0 0;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.manifestoLink a {
+  color: var(--text-muted);
+}
+
+.manifestoLink a:hover {
+  color: var(--text-body);
+}
+
 .footer {
   text-align: center;
   padding: 28px clamp(20px, 5vw, 64px);

@@ -45,6 +45,9 @@ export default function ComingSoonPage() {
           <Link href="/essays" className={styles.aboutLink}>
             Essays
           </Link>
+          <Link href="/manifesto" className={styles.aboutLink}>
+            Manifesto
+          </Link>
           <Link href="/about" className={styles.aboutLink}>
             About Dan →
           </Link>
@@ -63,8 +66,15 @@ export default function ComingSoonPage() {
             {comingSoon.subhead}
           </p>
 
+          <p className={`${styles.manifesto} ${styles.enter} ${styles.enterDelay3}`}>
+            {comingSoon.manifesto.body}{" "}
+            <Link href="/manifesto" className={styles.manifestoLink}>
+              {comingSoon.manifesto.linkLabel} →
+            </Link>
+          </p>
+
           <section
-            className={`${styles.comingSection} ${styles.enter} ${styles.enterDelay3}`}
+            className={`${styles.comingSection} ${styles.enter} ${styles.enterDelay4}`}
             aria-labelledby="whats-coming"
           >
             <h2 id="whats-coming" className={styles.comingLabel}>
@@ -85,7 +95,7 @@ export default function ComingSoonPage() {
 
           <section
             id="subscribe"
-            className={`${styles.subscribeSection} ${styles.enter} ${styles.enterDelay4}`}
+            className={`${styles.subscribeSection} ${styles.enter} ${styles.enterDelay5}`}
             aria-labelledby="subscribe-label"
           >
             <p id="subscribe-label" className={styles.subscribeLabel}>
@@ -99,6 +109,8 @@ export default function ComingSoonPage() {
       <footer className={styles.footer}>
         {comingSoon.footer.prefix}{" "}
         <Link href={comingSoon.footer.aboutHref}>{comingSoon.footer.name}</Link>
+        {" · "}
+        <Link href="/manifesto">Manifesto</Link>
       </footer>
     </div>
   );

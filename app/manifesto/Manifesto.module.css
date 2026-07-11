@@ -1,0 +1,134 @@
+.frame {
+  position: relative;
+  z-index: 1;
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 4vw, 32px)
+    clamp(48px, 8vw, 96px);
+}
+
+.block {
+  width: 100%;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: clamp(40px, 7vw, 72px) clamp(28px, 5vw, 56px)
+    clamp(44px, 7vw, 64px);
+  background:
+    linear-gradient(
+      165deg,
+      rgba(30, 41, 59, 0.72) 0%,
+      rgba(15, 23, 42, 0.88) 48%,
+      rgba(11, 18, 32, 0.94) 100%
+    );
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(245, 158, 11, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 56px);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+}
+
+.title {
+  font-family: var(--font-manifesto-serif), Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.rule {
+  width: 48px;
+  height: 2px;
+  margin: 28px auto 0;
+  background: var(--accent);
+  border: none;
+}
+
+.body {
+  /* spacing lives on .group and .stanza */
+}
+
+.group {
+  margin-top: 3.5rem;
+}
+
+.stanza {
+  margin-top: 1.75rem;
+}
+
+.stanza:first-child {
+  margin-top: 0;
+}
+
+.line {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.lineEmphasized {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--accent);
+  margin: 0;
+}
+
+.closing {
+  margin-top: clamp(48px, 8vw, 72px);
+  padding-top: clamp(32px, 5vw, 44px);
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  text-align: center;
+}
+
+.signature {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.brand {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 36px;
+  background: var(--accent);
+  color: #1a1206;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: filter 0.15s ease;
+}
+
+.cta:hover {
+  color: #1a1206;
+  filter: brightness(1.06);
+}
+
+@media (max-width: 480px) {
+  .block {
+    border-radius: 2px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .lineEmphasized {
+    font-size: 1.1rem;
+  }
+}
