@@ -47,10 +47,10 @@ export default async function NewsletterPage() {
         </div>
       ) : (
         <div className={styles.empty}>
-          <p className={styles.emptyTitle}>Archive coming soon</p>
+          <p className={styles.emptyTitle}>No published issues yet</p>
           <p className={styles.emptyText}>
-            Past issues will be pulled from Kit automatically — no duplicate
-            editing in a CMS.
+            Sent Kit broadcasts with a public archive link will appear here
+            automatically.
           </p>
         </div>
       )}
