@@ -1,0 +1,186 @@
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 72px) clamp(20px, 4vw, 32px)
+    clamp(56px, 10vw, 96px);
+}
+
+.intro {
+  max-width: 36rem;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin: 0 0 28px;
+}
+
+.manifesto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.line {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--text-body);
+}
+
+.line:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.flipCue {
+  margin: 0 0 14px;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.toggleWrap {
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.mapSection {
+  margin-bottom: clamp(36px, 5vw, 52px);
+}
+
+.legend {
+  margin-bottom: clamp(48px, 7vw, 72px);
+  padding-top: 8px;
+}
+
+.legendList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legendLabel {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-body);
+}
+
+.practicesLegend {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 40rem;
+}
+
+.swatch {
+  display: inline-block;
+  width: 18px;
+  height: 14px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.swatchPattern {
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(245, 158, 11, 0.55);
+}
+
+.swatchFieldGuide {
+  background: transparent;
+  border: 1px solid rgba(245, 158, 11, 0.7);
+}
+
+.swatchOpen {
+  background: transparent;
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+}
+
+.participation {
+  max-width: 36rem;
+  margin-bottom: clamp(48px, 7vw, 72px);
+  padding: 28px 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.sectionHeading {
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  margin: 0 0 12px;
+}
+
+.participationBody {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.participationLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.participationLink:hover {
+  color: color-mix(in srgb, var(--accent) 80%, white);
+}
+
+.changelog {
+  max-width: 40rem;
+}
+
+.changelogList {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.changelogItem {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 12px 16px;
+  align-items: baseline;
+}
+
+.changelogDate {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.changelogEntry {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+@media (max-width: 480px) {
+  .changelogItem {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
