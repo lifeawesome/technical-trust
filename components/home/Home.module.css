@@ -1,0 +1,300 @@
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 72px) clamp(20px, 4vw, 32px)
+    clamp(56px, 10vw, 96px);
+}
+
+/* —— Hero —— */
+
+.hero {
+  max-width: 40rem;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.kicker {
+  margin: 0 0 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.headline {
+  margin: 0 0 24px;
+  font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.standfirst {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 28px;
+}
+
+.standfirst p {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--text-body);
+}
+
+.standfirst p:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #1a1206;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ctaPrimary:hover {
+  background: #fbbf24;
+  color: #1a1206;
+}
+
+.ctaSecondary {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.ctaSecondary:hover {
+  color: var(--text-primary);
+}
+
+/* —— Map embed —— */
+
+.mapSection {
+  margin-bottom: clamp(56px, 9vw, 88px);
+}
+
+.flipHook {
+  max-width: 36rem;
+  margin-bottom: 14px;
+}
+
+.flipHookLine {
+  margin: 0 0 6px;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--text-body);
+}
+
+.flipCue {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.toggleWrap {
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+
+.mapMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 20px;
+  margin-top: clamp(20px, 3vw, 28px);
+}
+
+.versionBadge {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 4px;
+}
+
+.mapLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.mapLink:hover {
+  color: var(--text-primary);
+}
+
+/* —— Latest Patterns —— */
+
+.patternsSection {
+  margin-bottom: clamp(56px, 9vw, 88px);
+  max-width: 42rem;
+}
+
+.sectionHeading {
+  margin: 0 0 clamp(28px, 4vw, 36px);
+  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.patternList {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 40px);
+}
+
+.patternEntry {
+  padding: 0 0 clamp(28px, 4vw, 36px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.patternEntry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.patternMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.metaSep {
+  color: var(--text-faint);
+}
+
+.coords {
+  color: var(--accent);
+}
+
+.coords:hover {
+  color: color-mix(in srgb, var(--accent) 80%, white);
+}
+
+.patternName {
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.patternDefinition {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.readLink {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.allPatterns {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.allPatterns:hover {
+  color: var(--text-primary);
+}
+
+/* —— Manifesto —— */
+
+.manifestoSection {
+  max-width: 36rem;
+  margin-bottom: clamp(56px, 9vw, 88px);
+}
+
+.manifestoLines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 18px;
+}
+
+.manifestoLines p {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.manifestoFollow {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.manifestoLink {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* —— Subscribe —— */
+
+.subscribeSection {
+  max-width: 36rem;
+  scroll-margin-top: 96px;
+}
+
+.subscribeTitle {
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.subscribeLede {
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

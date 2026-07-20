@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Technical Trust",
   },
   description:
-    "A field resource for people making high-stakes technology decisions.",
+    "Trust is the scarcest resource in technology. A living framework of named failures and their counter-moves.",
 };
 
 export default function RootLayout({

@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { comingSoon } from "@/lib/content";
+import { subscribeForm } from "@/lib/content";
 import styles from "./EmailCapture.module.css";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -40,7 +40,7 @@ export default function EmailCapture() {
           <span className={styles.successMark} aria-hidden="true">
             ✓
           </span>
-          <p className={styles.successText}>{comingSoon.email.success}</p>
+          <p className={styles.successText}>{subscribeForm.success}</p>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ export default function EmailCapture() {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.fieldGroup}>
           <label htmlFor="email" className={styles.srOnly}>
-            {comingSoon.email.label}
+            {subscribeForm.label}
           </label>
           <span className={`${styles.atMark} mono`} aria-hidden="true">
             @
@@ -62,7 +62,7 @@ export default function EmailCapture() {
             type="email"
             required
             autoComplete="email"
-            placeholder={comingSoon.email.placeholder}
+            placeholder={subscribeForm.placeholder}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
@@ -73,7 +73,7 @@ export default function EmailCapture() {
               <span className={styles.spinner} aria-label="Submitting" />
             ) : (
               <>
-                {comingSoon.email.button}
+                {subscribeForm.button}
                 <span className={styles.buttonArrow} aria-hidden="true">
                   →
                 </span>
@@ -85,12 +85,12 @@ export default function EmailCapture() {
 
       <p className={styles.disclaimer}>
         <span className={styles.disclaimerDot} aria-hidden="true" />
-        {comingSoon.email.disclaimer}
+        {subscribeForm.disclaimer}
       </p>
 
       {status === "error" && (
         <p className={styles.error} role="alert">
-          {comingSoon.email.error}
+          {subscribeForm.error}
         </p>
       )}
     </div>

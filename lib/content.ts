@@ -4,53 +4,14 @@ export const CONTACT_EMAIL = "dan.davidson@gmail.com";
 export const LINKEDIN_URL = "https://linkedin.com/in/dandd";
 export const RESUME_HREF = "/dan-davidson-resume.pdf";
 
-export const comingSoon = {
-  metadata: {
-    title: "Technical Trust",
-    description:
-      "A field resource for people making high-stakes technology decisions — vendor evaluations, demo scrutiny, migrations, and build-vs-buy. Launching soon.",
-  },
-  eyebrow: "TECHNICAL TRUST — A FIELD RESOURCE",
-  headline:
-    "Most people making technology decisions can't fully understand the systems they're betting on.",
-  subhead:
-    "Technical Trust is a resource for exactly that moment — guides on evaluating vendors, sitting through demos, planning migrations, and making confident decisions about complex systems. Written by a practitioner, free to read, launching soon.",
-  manifesto: {
-    body: "Information is no longer scarce. Attention, judgment, and trust are. The Technical Trust Manifesto is the commitment behind this work — why trust is the scarcest resource in technology, and why the people who help others make confident decisions will matter more than those who simply have answers.",
-    linkLabel: "Read the manifesto",
-  },
-  whatsComing: [
-    {
-      title: "The Guide to Technical Trust",
-      description:
-        "The core framework: Competence, Comprehension, Candor, Consistency",
-      icon: "compass",
-    },
-    {
-      title: "Field Guides",
-      description:
-        "Practical playbooks for specific decisions: vendor evaluations, demo scrutiny, build-vs-buy",
-      icon: "map",
-    },
-    {
-      title: "The Trust Audit",
-      description: "A diagnostic for teams and buyers (coming later)",
-      icon: "audit",
-    },
-  ],
-  email: {
-    label: "Get chapters as they publish",
-    placeholder: "you@company.com",
-    button: "Subscribe",
-    disclaimer: "No spam, unsubscribe anytime.",
-    success: "You're on the list. We'll send chapters as they publish.",
-    error: "Something went wrong. Please try again.",
-  },
-  footer: {
-    prefix: "Written by",
-    name: "Dan Davidson",
-    aboutHref: "/about",
-  },
+/** Shared subscribe form copy (homepage `#subscribe` and EmailCapture). */
+export const subscribeForm = {
+  label: "Email address",
+  placeholder: "you@company.com",
+  button: "Subscribe",
+  disclaimer: "No spam, unsubscribe anytime.",
+  success: "You're on the list. One named failure every Friday.",
+  error: "Something went wrong. Please try again.",
 } as const;
 
 export const about = {

@@ -18,6 +18,8 @@ import {
 import { isExternalUrl } from "@/lib/patterns";
 import styles from "./FrameworkMap.module.css";
 
+export type FrameworkMapVariant = "default" | "compact";
+
 function statusClass(status: FrameworkCell["status"]): string {
   switch (status) {
     case "pattern":
@@ -35,13 +37,25 @@ function statusClass(status: FrameworkCell["status"]): string {
   }
 }
 
-function CellBody({ cell }: { cell: FrameworkCell }) {
+function CellBody({
+  cell,
+  compact,
+}: {
+  cell: FrameworkCell;
+  compact: boolean;
+}) {
+  if (compact && cell.status === "predicted") {
+    return null;
+  }
+
   const tag = cellTagLabel(cell);
   return (
     <>
       {tag ? <span className={`${styles.statusTag} mono`}>{tag}</span> : null}
       {cell.title ? <span className={styles.cellTitle}>{cell.title}</span> : null}
-      {cell.note ? <span className={styles.cellNote}>{cell.note}</span> : null}
+      {!compact && cell.note ? (
+        <span className={styles.cellNote}>{cell.note}</span>
+      ) : null}
     </>
   );
 }
@@ -53,6 +67,7 @@ function CellContent({
   view,
   reducedMotion,
   flipIndex,
+  compact,
 }: {
   cell: FrameworkCell;
   row: FrameworkRow;
@@ -60,8 +75,12 @@ function CellContent({
   view: FrameworkView;
   reducedMotion: boolean | null;
   flipIndex: number;
+  compact: boolean;
 }) {
-  const name = cellAccessibleName(cell, row, col, view);
+  const name =
+    compact && cell.status === "predicted"
+      ? `Unwritten — ${row.label} in the ${col.label}`
+      : cellAccessibleName(cell, row, col, view);
   const className = `${styles.cellInner} ${statusClass(cell.status)}`;
   const linkProps =
     cell.slug && isExternalUrl(cell.slug)
@@ -71,7 +90,7 @@ function CellContent({
   let content: React.ReactNode;
 
   if (isPublished(cell.status) && cell.slug) {
-    const body = <CellBody cell={cell} />;
+    const body = <CellBody cell={cell} compact={compact} />;
     if (reducedMotion) {
       content = (
         <Link
@@ -121,7 +140,7 @@ function CellContent({
       );
     }
   } else if (cell.status === "planned") {
-    const body = <CellBody cell={cell} />;
+    const body = <CellBody cell={cell} compact={compact} />;
     content = cell.slug ? (
       <Link
         href={cell.slug}
@@ -139,7 +158,7 @@ function CellContent({
   } else if (cell.status === "predicted") {
     content = (
       <div className={className} aria-label={name}>
-        <CellBody cell={cell} />
+        <CellBody cell={cell} compact={compact} />
       </div>
     );
   } else {
@@ -168,12 +187,76 @@ function CellContent({
   );
 }
 
+function CompactMobileFigure({ view }: { view: FrameworkView }) {
+  return (
+    <Link
+      href="/framework"
+      className={styles.compactFigure}
+      aria-label="Open the full Technical Trust framework map"
+    >
+      <figure className={styles.compactFigureInner}>
+        <div
+          className={styles.compactFigureGrid}
+          role="img"
+          aria-label={
+            view === "practices"
+              ? "Simplified Practices map"
+              : "Simplified Patterns map"
+          }
+        >
+          <span className={styles.compactFigureCorner} aria-hidden="true" />
+          {columns.map((col) => (
+            <span
+              key={col.id}
+              className={`${styles.compactFigureCol} mono`}
+              aria-hidden="true"
+            >
+              {col.label === "Discovery"
+                ? "Disc"
+                : col.label === "Support"
+                  ? "Supp"
+                  : col.label}
+            </span>
+          ))}
+          {rows.map((row) => (
+            <div key={row.id} className={styles.compactFigureRow}>
+              <span className={styles.compactFigureRowLabel} aria-hidden="true">
+                {row.label}
+              </span>
+              {columns.map((col) => {
+                const cell = getCell(row.id, col.id, view);
+                const filled = isPublished(cell.status) || cell.status === "planned";
+                return (
+                  <span
+                    key={col.id}
+                    className={
+                      filled
+                        ? styles.compactFigureCellFilled
+                        : styles.compactFigureCellGhost
+                    }
+                    aria-hidden="true"
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+        <figcaption className={styles.compactFigureCaption}>
+          See the full map →
+        </figcaption>
+      </figure>
+    </Link>
+  );
+}
+
 function DesktopMap({
   view,
   reducedMotion,
+  compact,
 }: {
   view: FrameworkView;
   reducedMotion: boolean | null;
+  compact: boolean;
 }) {
   return (
     <div
@@ -207,7 +290,9 @@ function DesktopMap({
               <>
                 <th scope="row" className={styles.rowHeader}>
                   <span className={styles.rowLabel}>{row.label}</span>
-                  <span className={styles.rowLine}>{row.line}</span>
+                  {!compact ? (
+                    <span className={styles.rowLine}>{row.line}</span>
+                  ) : null}
                 </th>
                 {cells.map(({ col, cell }) => (
                   <td key={col.id} className={styles.td}>
@@ -218,6 +303,7 @@ function DesktopMap({
                       view={view}
                       reducedMotion={reducedMotion}
                       flipIndex={cellReadingIndex(row.id, col.id)}
+                      compact={compact}
                     />
                   </td>
                 ))}
@@ -292,6 +378,7 @@ function MobileRowSection({
             view={view}
             reducedMotion={reducedMotion}
             flipIndex={cellReadingIndex(row.id, col.id)}
+            compact={false}
           />
         </li>
       ))}
@@ -335,33 +422,49 @@ function MobileRowSection({
 
 type FrameworkMapProps = {
   view: FrameworkView;
+  variant?: FrameworkMapVariant;
 };
 
-export default function FrameworkMap({ view }: FrameworkMapProps) {
+export default function FrameworkMap({
+  view,
+  variant = "default",
+}: FrameworkMapProps) {
   const reducedMotion = useReducedMotion();
+  const compact = variant === "compact";
 
   return (
-    <div className={styles.map}>
-      <DesktopMap view={view} reducedMotion={reducedMotion} />
-      <div
-        className={styles.mobile}
-        role="region"
-        aria-label={
-          view === "practices"
-            ? "Practices framework map"
-            : "Patterns framework map"
-        }
-      >
-        {rows.map((row, i) => (
-          <MobileRowSection
-            key={row.id}
-            row={row}
-            rowIndex={i}
-            view={view}
-            reducedMotion={reducedMotion}
-          />
-        ))}
-      </div>
+    <div
+      className={`${styles.map}${compact ? ` ${styles.mapCompact}` : ""}`}
+      data-variant={variant}
+    >
+      <DesktopMap
+        view={view}
+        reducedMotion={reducedMotion}
+        compact={compact}
+      />
+      {compact ? (
+        <CompactMobileFigure view={view} />
+      ) : (
+        <div
+          className={styles.mobile}
+          role="region"
+          aria-label={
+            view === "practices"
+              ? "Practices framework map"
+              : "Patterns framework map"
+          }
+        >
+          {rows.map((row, i) => (
+            <MobileRowSection
+              key={row.id}
+              row={row}
+              rowIndex={i}
+              view={view}
+              reducedMotion={reducedMotion}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
