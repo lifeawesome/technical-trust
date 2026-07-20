@@ -35,7 +35,7 @@ export const patterns: Pattern[] = [
     definition: "Pretending to know instead of committing to find out.",
     editionNumber: 1,
     publishedDate: "2026-07-10",
-    readUrl: "https://technicaltrust.kit.com/posts/the-confidence-bluff",
+    readUrl: "https://newsletter.technicaltrust.org/posts/the-confidence-bluff",
     practice: {
       id: "the-find-out",
       name: "The Find-Out",
@@ -52,7 +52,7 @@ export const patterns: Pattern[] = [
       "Showing everything the product does instead of the one thing they need.",
     editionNumber: 2,
     publishedDate: "2026-07-17",
-    readUrl: "https://technicaltrust.kit.com/posts/the-feature-dump",
+    readUrl: "https://newsletter.technicaltrust.org/posts/the-feature-dump",
     practice: {
       id: "the-one-thing",
       name: "The One Thing",

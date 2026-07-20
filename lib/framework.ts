@@ -85,7 +85,7 @@ export const cells: FrameworkCell[] = [];
 
 export const changelog: ChangelogEntry[] = [
   {
-    date: "2026-07-XX",
+    date: "2026-07-16",
     entry: "Framework map published with two Patterns.",
   },
   {
