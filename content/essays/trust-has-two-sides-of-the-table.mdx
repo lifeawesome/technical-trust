@@ -1,0 +1,69 @@
+{/*
+  Essay #2 — bridges the Four C's (perception) and the framework map (production).
+  Set draft: false when ready to publish.
+*/}
+
+export const meta = {
+  title: "Trust Has Two Sides of the Table",
+  description:
+    "Buyers check for trust. Practitioners build it. Those are different jobs — and the difference explains how the four pillars and the framework map fit together.",
+  publishedAt: "2026-07-20",
+  tags: ["technical trust", "framework", "four pillars", "vendor evaluation"],
+  draft: true,
+};
+
+Every demo contains two jobs.
+
+On one side of the table, a solutions engineer is trying to build something invisible. On the other, a director is trying to detect it. They're in the same meeting, watching the same screen, and they are not doing the same thing. One of them is producing trust. The other is checking for it.
+
+Most writing about technical relationships collapses these two jobs into one — as if "trust" were a single substance that one person hands to another. It isn't. And once you separate the two jobs, a piece of this site that might have looked like a loose end snaps into place.
+
+## The pillars belong to the decider
+
+In [What Is Technical Trust?](/essays/what-is-technical-trust) I named four pillars: competence, comprehension, candor, consistency. Since writing it, the most useful thing I've clarified is *whose* framework that actually is.
+
+It belongs to the person making the decision.
+
+The four pillars are checks. If you've ever evaluated a vendor, a consultant, or the confident architect down the hall, you were running them — probably without names. *Can they actually do this?* Competence. *Do they understand my situation, or a generic one?* Comprehension. *Are they telling me the truth, including the inconvenient parts?* Candor. *Is the story the same every time I hear it?* Consistency.
+
+Notice what kind of thing each check is. It's a verdict. It gets rendered in the decider's head, and it gets rendered across the whole relationship — the demo and the docs, the March claim and the June reality. The pillars aren't actions anyone takes. They're conclusions someone reaches.
+
+Which creates a real problem for the person on the other side of the table.
+
+## You cannot perform a pillar
+
+Try it. Walk into your next demo and *be consistent*. You can't — consistency is a judgment about months of your behavior, and this meeting is an hour long. Be candid, then. But candor isn't a thing you do either; it's a pattern someone eventually detects in your disclosures. Even competence isn't performable — every attempt to perform it reads as exactly that, a performance.
+
+This is where "just build trust" advice falls apart, and where a lot of genuinely good technical people get stuck. They're being graded on four qualities that cannot be directly demonstrated, only inferred. The pillars are perception. They live on the buyer's side of the table, and the practitioner can't touch them.
+
+What the practitioner can touch is behavior. Specific moves, in specific moments.
+
+That's what [the framework map](/framework) is. Its rows are behaviors — honesty, understanding, clarity, judgment. Its columns are moments — discovery, demo, docs, support. Every cell is a place where a specific move either happens or doesn't. The map is deliberately built out of things you can *do this Friday*: say "I don't know, I'll find out" instead of bluffing. Demo the one thing they came for instead of everything the product does. Document the failure modes instead of the happy path.
+
+Two frameworks, then. Four pillars on the buyer's side. A map of moves on the practitioner's side. Here is the entire relationship between them, in one sentence:
+
+**Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen.**
+
+## How the checks get passed
+
+The correspondence isn't word-for-word, and it shouldn't be — perceptions and behaviors aren't the same kind of thing. It works more like this.
+
+Your candor check gets passed or failed by honesty moves in individual moments. A rep who says "I don't know — I'll find out, and here's what we do know" has just handed you calibration data: proof that their claims are filtered before they reach you. A rep who bluffs an answer has handed you the opposite. One sentence, in one demo, and your candor verdict just moved. The map calls these two moves by name — [The Confidence Bluff](/patterns#the-confidence-bluff) and its mirror, The Find-Out — and there are honesty cells like it in every column.
+
+Your comprehension check is fed by understanding and clarity moves together. When a vendor demos your problem instead of their product, that's an understanding move. When they draw the one diagram that finally makes the architecture make sense to you — simple, and still true — that's a clarity move. Pass enough of those and you'll notice something: you can now explain their system to your own boss in your own words. That moment, which the first essay called the point where trust jumps, is what a passed comprehension check feels like from the inside.
+
+Then there are the two pillars that work differently — and they're the reason the map looks the way it does.
+
+**Competence is the precondition.** Look at the map and you'll notice something odd: almost none of the sixteen named failures is a knowledge failure. The Confidence Bluff is committed by people who know their product cold — that's what makes it so unnecessary. The Feature Dump is usually a symptom of knowing *too much* and filtering too little. In my twenty-six years I have watched very few deals die of incompetence and a great many die on the map. Competence is the entry fee. The game is played elsewhere.
+
+**Consistency is the accumulation law.** It's the one check no single meeting can satisfy, because it's a verdict about repetition: same people, same story, same behavior, every moment, over time. This is precisely why trust can't be sprinted and why a single discovered discrepancy is so expensive — one surprise forces the decider to re-audit everything. It's also why the map is a grid rather than a checklist. You don't complete it once. You fill it in, moment after moment, and consistency is the compound interest on every cell.
+
+## What each side does with this
+
+If you're the one deciding: stop auditing vibes and start auditing behavior. You can't verify a vendor's architecture claims, but you can verify their conduct against the map. Have they ever said "I don't know" in front of you? Did the demo start from your problem or their feature list? Do the docs admit any sharp edges? Behavior is inspectable in a way that competence claims never will be — and the sixteen failures on the map are, read from your side of the table, sixteen warning signs.
+
+If you're the practitioner: the pillars are out of your hands, and that should come as a relief. You don't have to *be trusted* in any given meeting — you can't be. You have to make the right move in the moment you're in, and let the verdicts accumulate. The map is the inventory of those moves, failure and counter-move, cell by cell. [Every failure on it has an equal and opposite move. Flip it.](/framework?view=practices)
+
+Two sides. One table. The checks on one side, the moves on the other — and every technical relationship you're in is currently somewhere on that map, whether anyone at the table has named it or not.
+
+— Dan
