@@ -1,0 +1,36 @@
+---
+description: Technical Trust canon — always-on invariants
+alwaysApply: true
+---
+
+# Technical Trust Canon (digest)
+
+Full canon: docs/CANON.md — read it before any content, naming, data-model, or copy change. The canon wins over this digest if they ever disagree.
+
+## The theorem is two-sided. The models NEVER blur.
+- The Four C's (Competence, Comprehension, Candor, Consistency) are the PERCEPTION model — what a BUYER checks for across a relationship. They are NOT rows on the map.
+- The map rows (Honesty, Understanding, Clarity, Judgment) are the PRODUCTION model — what a PRACTITIONER does in a moment (Discovery, Demo, Docs, Support). They are NOT what buyers check for.
+- Bridge sentence (the only sanctioned way to connect them): "Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen."
+- Competence is the precondition the map assumes. Consistency is the accumulation law. Never place either on the grid.
+
+## Names are canonical.
+- The 16 Pattern/Practice pairs are defined in docs/CANON.md §3. `lib/patterns.ts` must match the canon exactly.
+- Never invent, rename, or "improve" a Pattern or Practice name in passing. A rename is an AMENDMENT: update docs/CANON.md (bump version, add amendment-log row), update patterns.ts, add a framework changelog entry — all in the same change.
+- Naming laws: Patterns are "The ___", concrete and recognizable from the inside. Practices are executable MOVES, never virtues. Pairs read as mirrors. Max 2–3 announced Patterns at any time.
+
+## Data laws.
+- `lib/patterns.ts` is the single source of truth for Pattern/Practice data; `lib/framework.ts` for grid structure. Never duplicate this data in components, pages, or copy.
+- Pages render from data, never hand-written content lists (the homepage staleness rule).
+- Shareable state lives in URLs, never localStorage.
+- Canonical edition domain: newsletter.technicaltrust.org.
+
+## Voice.
+- Framing copy uses manifesto cadence: short declarative lines, one idea per line.
+- Never motivational-poster. Practices are moves. Teach before persuading.
+- Brand compression: "Flip it."
+
+## The canon is internal.
+- Never import docs/CANON.md into app code, never route to it, never link it from public pages, never quote it as a citable document in site copy. Its IDEAS ship; the document does not.
+
+## When a request conflicts with the canon:
+Flag the conflict and propose it as an amendment instead of silently complying or silently refusing.

@@ -1,3 +1,10 @@
+/**
+ * CANON-GOVERNED FILE — see docs/CANON.md (§3, §5, §8).
+ * Names and structure here are canonical. Do not add, rename, or restructure
+ * without a canon amendment: bump the canon version, add an amendment-log row,
+ * and add a framework changelog entry in the same commit.
+ */
+
 export type PatternStatus = "published" | "announced" | "predicted";
 
 export interface Practice {
