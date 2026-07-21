@@ -35,7 +35,20 @@ export async function generateMetadata({
       description: mod.meta.description,
       type: "article",
       publishedTime: mod.meta.publishedAt,
+      ...(mod.meta.featuredImage
+        ? { images: [{ url: mod.meta.featuredImage }] }
+        : {}),
     },
+    ...(mod.meta.featuredImage
+      ? {
+          twitter: {
+            card: "summary_large_image",
+            title: mod.meta.title,
+            description: mod.meta.description,
+            images: [mod.meta.featuredImage],
+          },
+        }
+      : {}),
   };
 }
 

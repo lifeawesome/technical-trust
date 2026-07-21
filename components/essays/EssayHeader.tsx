@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { EssayMeta } from "@/lib/essays";
 import { formatEssayDate } from "@/lib/essays";
@@ -31,6 +32,19 @@ export default function EssayHeader({ meta }: EssayHeaderProps) {
             </span>
           ))}
         </div>
+      ) : null}
+      {meta.featuredImage ? (
+        <figure className={styles.featured}>
+          <Image
+            src={meta.featuredImage}
+            alt={meta.featuredImageAlt ?? ""}
+            width={1408}
+            height={768}
+            className={styles.featuredImage}
+            priority
+            sizes="(max-width: 768px) 100vw, 720px"
+          />
+        </figure>
       ) : null}
     </header>
   );

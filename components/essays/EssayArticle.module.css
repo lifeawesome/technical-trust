@@ -57,6 +57,18 @@
   margin-bottom: 8px;
 }
 
+.featured {
+  margin: 28px 0 0;
+}
+
+.featuredImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
 .tag {
   font-size: 11px;
   color: var(--text-body);

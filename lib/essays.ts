@@ -12,6 +12,9 @@ export type EssayMeta = {
   tags?: string[];
   draft?: boolean;
   series?: string;
+  /** Public path, e.g. `/featured/trust-trust.png`. */
+  featuredImage?: string;
+  featuredImageAlt?: string;
 };
 
 export type Essay = EssayMeta & { slug: string };
