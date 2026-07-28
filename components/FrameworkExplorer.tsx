@@ -8,20 +8,19 @@ import {
   parseFrameworkView,
   type FrameworkView,
 } from "@/lib/framework";
+import type { Pattern } from "@/lib/patterns";
 import styles from "@/app/framework/Framework.module.css";
 
 type FrameworkExplorerProps = {
   initialView: FrameworkView;
+  patterns: readonly Pattern[];
 };
 
 export default function FrameworkExplorer({
   initialView,
+  patterns,
 }: FrameworkExplorerProps) {
   const [view, setView] = useState<FrameworkView>(initialView);
-
-  useEffect(() => {
-    setView(initialView);
-  }, [initialView]);
 
   useEffect(() => {
     const onPopState = () => {
@@ -45,7 +44,7 @@ export default function FrameworkExplorer({
       </div>
 
       <section className={styles.mapSection} aria-label="Trust framework map">
-        <FrameworkMap view={view} />
+        <FrameworkMap view={view} patterns={patterns} />
       </section>
 
       <section className={styles.legend} aria-label="Map legend">

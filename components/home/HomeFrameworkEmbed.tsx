@@ -9,11 +9,16 @@ import {
   frameworkVersion,
   type FrameworkView,
 } from "@/lib/framework";
+import type { Pattern } from "@/lib/patterns";
 import styles from "./Home.module.css";
 
 const flipHook = frameworkIntro[frameworkIntro.length - 1];
 
-export default function HomeFrameworkEmbed() {
+type HomeFrameworkEmbedProps = {
+  patterns: readonly Pattern[];
+};
+
+export default function HomeFrameworkEmbed({ patterns }: HomeFrameworkEmbedProps) {
   const [view, setView] = useState<FrameworkView>("patterns");
 
   return (
@@ -27,7 +32,7 @@ export default function HomeFrameworkEmbed() {
         <FrameworkToggle view={view} onChange={setView} />
       </div>
 
-      <FrameworkMap view={view} variant="compact" />
+      <FrameworkMap view={view} patterns={patterns} variant="compact" />
 
       <div className={styles.mapMeta}>
         <span className={`${styles.versionBadge} mono`}>{frameworkVersion}</span>

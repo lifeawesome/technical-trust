@@ -5,6 +5,7 @@ import HomeFrameworkEmbed from "@/components/home/HomeFrameworkEmbed";
 import HomeHero from "@/components/home/HomeHero";
 import PublicationShell from "@/components/publication/PublicationShell";
 import { coordinateLabel } from "@/lib/framework";
+import { getHydratedPatterns } from "@/lib/pattern-hydration";
 import {
   formatEditionNumber,
   getPublishedPatterns,
@@ -31,8 +32,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
-  const latest = getPublishedPatterns().slice(0, 2);
+export default async function Home() {
+  const patterns = await getHydratedPatterns();
+  const latest = getPublishedPatterns(patterns).slice(0, 2);
   const newest = latest[0];
 
   if (!newest?.readUrl) {
@@ -47,7 +49,7 @@ export default function Home() {
           latestPatternName={newest.name}
         />
 
-        <HomeFrameworkEmbed />
+        <HomeFrameworkEmbed patterns={patterns} />
 
         <section
           className={styles.patternsSection}

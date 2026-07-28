@@ -257,14 +257,18 @@ export const patternsIntro = [
   "New Patterns are named in Technical Trust Weekly, every Friday.",
 ] as const;
 
-export function getPublishedPatterns(): Pattern[] {
-  return patterns
+export function getPublishedPatterns(
+  list: readonly Pattern[] = patterns,
+): Pattern[] {
+  return list
     .filter((p) => p.status === "published")
     .sort((a, b) => (b.editionNumber ?? 0) - (a.editionNumber ?? 0));
 }
 
-export function getAnnouncedPatterns(): Pattern[] {
-  return patterns.filter((p) => p.status === "announced");
+export function getAnnouncedPatterns(
+  list: readonly Pattern[] = patterns,
+): Pattern[] {
+  return list.filter((p) => p.status === "announced");
 }
 
 export function formatEditionNumber(n: number): string {

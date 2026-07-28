@@ -15,7 +15,7 @@ import {
   type FrameworkRow,
   type FrameworkView,
 } from "@/lib/framework";
-import { isExternalUrl } from "@/lib/patterns";
+import { isExternalUrl, type Pattern } from "@/lib/patterns";
 import styles from "./FrameworkMap.module.css";
 
 export type FrameworkMapVariant = "default" | "compact";
@@ -187,7 +187,13 @@ function CellContent({
   );
 }
 
-function CompactMobileFigure({ view }: { view: FrameworkView }) {
+function CompactMobileFigure({
+  view,
+  patternList,
+}: {
+  view: FrameworkView;
+  patternList: readonly Pattern[];
+}) {
   return (
     <Link
       href="/framework"
@@ -224,7 +230,7 @@ function CompactMobileFigure({ view }: { view: FrameworkView }) {
                 {row.label}
               </span>
               {columns.map((col) => {
-                const cell = getCell(row.id, col.id, view);
+                const cell = getCell(row.id, col.id, view, patternList);
                 const filled = isPublished(cell.status) || cell.status === "planned";
                 return (
                   <span
@@ -253,10 +259,12 @@ function DesktopMap({
   view,
   reducedMotion,
   compact,
+  patternList,
 }: {
   view: FrameworkView;
   reducedMotion: boolean | null;
   compact: boolean;
+  patternList: readonly Pattern[];
 }) {
   return (
     <div
@@ -283,7 +291,7 @@ function DesktopMap({
           {rows.map((row, rowIndex) => {
             const cells = columns.map((col) => ({
               col,
-              cell: getCell(row.id, col.id, view),
+              cell: getCell(row.id, col.id, view, patternList),
             }));
 
             const rowContent = (
@@ -341,17 +349,19 @@ function MobileRowSection({
   rowIndex,
   view,
   reducedMotion,
+  patternList,
 }: {
   row: FrameworkRow;
   rowIndex: number;
   view: FrameworkView;
   reducedMotion: boolean | null;
+  patternList: readonly Pattern[];
 }) {
   const filled: { col: FrameworkColumn; cell: FrameworkCell }[] = [];
   const ghostNames: string[] = [];
 
   for (const col of columns) {
-    const cell = getCell(row.id, col.id, view);
+    const cell = getCell(row.id, col.id, view, patternList);
     if (cell.status === "predicted") {
       if (cell.title) ghostNames.push(cell.title);
     } else if (cell.status !== "open") {
@@ -422,11 +432,13 @@ function MobileRowSection({
 
 type FrameworkMapProps = {
   view: FrameworkView;
+  patterns: readonly Pattern[];
   variant?: FrameworkMapVariant;
 };
 
 export default function FrameworkMap({
   view,
+  patterns: patternList,
   variant = "default",
 }: FrameworkMapProps) {
   const reducedMotion = useReducedMotion();
@@ -441,9 +453,10 @@ export default function FrameworkMap({
         view={view}
         reducedMotion={reducedMotion}
         compact={compact}
+        patternList={patternList}
       />
       {compact ? (
-        <CompactMobileFigure view={view} />
+        <CompactMobileFigure view={view} patternList={patternList} />
       ) : (
         <div
           className={styles.mobile}
@@ -461,6 +474,7 @@ export default function FrameworkMap({
               rowIndex={i}
               view={view}
               reducedMotion={reducedMotion}
+              patternList={patternList}
             />
           ))}
         </div>

@@ -7,6 +7,7 @@ import {
   frameworkVersion,
   parseFrameworkView,
 } from "@/lib/framework";
+import { getHydratedPatterns } from "@/lib/pattern-hydration";
 import styles from "./Framework.module.css";
 
 const title = "The Technical Trust Framework";
@@ -38,6 +39,7 @@ export default async function FrameworkPage({
   const params = await searchParams;
   const initialView = parseFrameworkView(params.view);
   const changelogNewestFirst = [...changelog].reverse();
+  const patterns = await getHydratedPatterns();
 
   return (
     <div className={styles.page}>
@@ -54,7 +56,11 @@ export default async function FrameworkPage({
         </div>
       </header>
 
-      <FrameworkExplorer initialView={initialView} />
+      <FrameworkExplorer
+        key={initialView}
+        initialView={initialView}
+        patterns={patterns}
+      />
 
       <section className={styles.participation} aria-labelledby="participation-heading">
         <h2 id="participation-heading" className={styles.sectionHeading}>

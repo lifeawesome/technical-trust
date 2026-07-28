@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PatternCard from "@/components/PatternCard";
+import { getHydratedPatterns } from "@/lib/pattern-hydration";
 import {
   getAnnouncedPatterns,
   getPublishedPatterns,
@@ -27,9 +28,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PatternsPage() {
-  const published = getPublishedPatterns();
-  const announced = getAnnouncedPatterns();
+export default async function PatternsPage() {
+  const patterns = await getHydratedPatterns();
+  const published = getPublishedPatterns(patterns);
+  const announced = getAnnouncedPatterns(patterns);
 
   return (
     <div className={styles.page}>
