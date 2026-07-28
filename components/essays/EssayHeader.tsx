@@ -8,7 +8,16 @@ type EssayHeaderProps = {
   meta: EssayMeta;
 };
 
+function isSvgSrc(src: string) {
+  return /\.svg(?:$|\?)/i.test(src);
+}
+
 export default function EssayHeader({ meta }: EssayHeaderProps) {
+  const featured = meta.featuredImage;
+  const featuredAlt =
+    meta.featuredImageAlt ??
+    (featured ? meta.title : undefined);
+
   return (
     <header className={styles.header}>
       <Link href="/essays" className={`${styles.back} mono`}>
@@ -33,17 +42,34 @@ export default function EssayHeader({ meta }: EssayHeaderProps) {
           ))}
         </div>
       ) : null}
-      {meta.featuredImage ? (
+      {featured ? (
         <figure className={styles.featured}>
-          <Image
-            src={meta.featuredImage}
-            alt={meta.featuredImageAlt ?? ""}
-            width={1408}
-            height={768}
-            className={styles.featuredImage}
-            priority
-            sizes="(max-width: 768px) 100vw, 720px"
-          />
+          {isSvgSrc(featured) ? (
+            // <object> preserves SVG CSS animations; next/image would flatten to <img>.
+            <object
+              data={featured}
+              type="image/svg+xml"
+              className={styles.featuredSvg}
+              aria-label={featuredAlt}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={featured}
+                alt={featuredAlt ?? ""}
+                className={styles.featuredImage}
+              />
+            </object>
+          ) : (
+            <Image
+              src={featured}
+              alt={featuredAlt ?? ""}
+              width={meta.featuredImageWidth ?? 1408}
+              height={meta.featuredImageHeight ?? 768}
+              className={styles.featuredImage}
+              priority
+              sizes="(max-width: 768px) 100vw, 720px"
+            />
+          )}
         </figure>
       ) : null}
     </header>

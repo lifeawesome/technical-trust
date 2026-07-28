@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1600"
+     height="900"
+     viewBox="0 0 1600 900"
+     role="img"
+     aria-labelledby="title description">
+  <title id="title">Trust Has a Map and a Clock</title>
+  <desc id="description">An architectural blueprint with Discovery, Demo, Docs, and Support rooms crossed by a translucent lifecycle clock for Discovery, Architecture, and Adoption.</desc>
+
+  <defs>
+    <style>
+      /*
+        Motion is intentionally restrained for an editorial header.
+        Change the durations here to speed up or slow down the composition.
+      */
+      #hour-hand,
+      #minute-hand,
+      #second-hand {
+        transform-box: view-box;
+        transform-origin: 1160px 450px;
+      }
+
+      #hour-hand {
+        animation: rotate-clock 2592s linear infinite;
+      }
+
+      #minute-hand {
+        animation: rotate-clock 216s linear infinite;
+      }
+
+      #second-hand {
+        animation: rotate-clock 18s linear infinite;
+      }
+
+      #trust-flow {
+        animation: flow-trust 3.2s linear infinite;
+      }
+
+      #spotlight {
+        animation: breathe-light 6s ease-in-out infinite;
+        transform-box: view-box;
+        transform-origin: 1128px 448px;
+      }
+
+      #clock-face,
+      #lifecycle-arcs {
+        animation: breathe-clock 6s ease-in-out infinite;
+        transform-box: view-box;
+        transform-origin: 1160px 450px;
+      }
+
+      #room-labels g > circle:first-child {
+        animation: pulse-marker 4s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      #room-labels g > circle:nth-child(2) {
+        animation: pulse-ring 4s ease-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      #room-demo circle { animation-delay: -1s; }
+      #room-docs circle { animation-delay: -2s; }
+      #room-support circle { animation-delay: -3s; }
+
+      @keyframes rotate-clock {
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes flow-trust {
+        to { stroke-dashoffset: -28; }
+      }
+
+      @keyframes breathe-light {
+        0%, 100% { opacity: 0.76; transform: scale(0.985); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+
+      @keyframes breathe-clock {
+        0%, 100% { opacity: 0.94; }
+        50% { opacity: 1; }
+      }
+
+      @keyframes pulse-marker {
+        0%, 100% { opacity: 0.78; transform: scale(0.88); }
+        45% { opacity: 1; transform: scale(1.12); }
+      }
+
+      @keyframes pulse-ring {
+        0% { opacity: 0; transform: scale(0.58); }
+        42% { opacity: 0.42; }
+        100% { opacity: 0; transform: scale(1.35); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #hour-hand,
+        #minute-hand,
+        #second-hand,
+        #trust-flow,
+        #spotlight,
+        #clock-face,
+        #lifecycle-arcs,
+        #room-labels circle {
+          animation: none !important;
+        }
+      }
+    </style>
+
+    <!-- Palette -->
+    <linearGradient id="backgroundGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061426"/>
+      <stop offset="0.58" stop-color="#0A2038"/>
+      <stop offset="1" stop-color="#08182B"/>
+    </linearGradient>
+
+    <radialGradient id="clockGlass" cx="48%" cy="43%" r="58%">
+      <stop offset="0" stop-color="#C7E9F7" stop-opacity="0.12"/>
+      <stop offset="0.72" stop-color="#7BB8D0" stop-opacity="0.055"/>
+      <stop offset="1" stop-color="#06203A" stop-opacity="0.03"/>
+    </radialGradient>
+
+    <radialGradient id="goldGlow">
+      <stop offset="0" stop-color="#F5CB73" stop-opacity="0.8"/>
+      <stop offset="0.35" stop-color="#DDAF52" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#DDAF52" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="spotlightGradient" x1="1" y1="0.5" x2="0" y2="0.5">
+      <stop offset="0" stop-color="#F4C66B" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#D6A84F" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#D6A84F" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="handGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6D58E"/>
+      <stop offset="1" stop-color="#C69339"/>
+    </linearGradient>
+
+    <pattern id="minorGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24"
+            fill="none"
+            stroke="#87B8CE"
+            stroke-width="1"
+            stroke-opacity="0.055"/>
+    </pattern>
+
+    <pattern id="majorGrid" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="url(#minorGrid)"/>
+      <path d="M 120 0 L 0 0 0 120"
+            fill="none"
+            stroke="#9DCDE0"
+            stroke-width="1.3"
+            stroke-opacity="0.08"/>
+    </pattern>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="13"/>
+    </filter>
+
+    <filter id="smallGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+    <filter id="clockShadow" x="-30%" y="-30%" width="170%" height="180%">
+      <feDropShadow dx="-18" dy="26" stdDeviation="24" flood-color="#020A12" flood-opacity="0.52"/>
+    </filter>
+
+    <clipPath id="artboardClip">
+      <rect width="1600" height="900" rx="0"/>
+    </clipPath>
+
+    <!-- Paths kept separate so labels and arcs remain easy to edit -->
+    <path id="discoveryArc" d="M 1001 177 A 330 330 0 0 1 1335 188"/>
+    <path id="architectureArc" d="M 1407 245 A 330 330 0 0 1 1456 554"/>
+    <path id="adoptionArc" d="M 1366 681 A 330 330 0 0 1 1033 726"/>
+  </defs>
+
+  <g id="background">
+    <rect width="1600" height="900" fill="url(#backgroundGradient)"/>
+    <rect width="1600" height="900" fill="url(#majorGrid)"/>
+    <ellipse cx="1140" cy="460" rx="580" ry="520" fill="#15415C" opacity="0.08"/>
+    <path d="M0 724 C420 682 675 794 1048 746 C1265 718 1423 647 1600 665 L1600 900 L0 900 Z"
+          fill="#020B15"
+          opacity="0.18"/>
+  </g>
+
+  <!-- Gold light links the lifecycle clock to the map. -->
+  <g id="spotlight" clip-path="url(#artboardClip)">
+    <path d="M1128 448 L148 144 L106 778 Z"
+          fill="url(#spotlightGradient)"
+          opacity="0.72"/>
+    <path d="M1128 448 L352 296 L225 675 Z"
+          fill="#E1B057"
+          opacity="0.035"/>
+    <ellipse cx="1128" cy="448" rx="128" ry="128"
+             fill="url(#goldGlow)"
+             opacity="0.38"
+             filter="url(#softGlow)"/>
+  </g>
+
+  <!-- MAP / WHERE -->
+  <g id="map" transform="translate(126 124) rotate(-3 492 334)">
+    <g id="map-caption" font-family="Inter, Helvetica, Arial, sans-serif">
+      <text x="22" y="20"
+            fill="#79AFC7"
+            font-size="15"
+            font-weight="700"
+            letter-spacing="4">THE MAP / WHERE TRUST TOUCHES</text>
+      <line x1="22" y1="36" x2="474" y2="36"
+            stroke="#79AFC7"
+            stroke-width="1"
+            stroke-opacity="0.45"/>
+      <text x="862" y="20"
+            text-anchor="end"
+            fill="#79AFC7"
+            font-size="12"
+            letter-spacing="2.5"
+            opacity="0.78">SURFACES RECUR</text>
+    </g>
+
+    <g id="blueprint-outline"
+       fill="none"
+       stroke="#B8DDEA"
+       stroke-linecap="square"
+       stroke-linejoin="miter">
+      <!-- Outer double walls -->
+      <path d="M22 66 H866 V640 H22 Z" stroke-width="4.5" stroke-opacity="0.86"/>
+      <path d="M34 78 H854 V628 H34 Z" stroke-width="1.5" stroke-opacity="0.62"/>
+
+      <!-- Main interior walls -->
+      <path d="M446 78 V314 M446 386 V628" stroke-width="4" stroke-opacity="0.82"/>
+      <path d="M34 350 H244 M315 350 H854" stroke-width="4" stroke-opacity="0.82"/>
+      <path d="M652 78 V181 M652 251 V350" stroke-width="3.2" stroke-opacity="0.74"/>
+      <path d="M652 350 V470 M652 537 V628" stroke-width="3.2" stroke-opacity="0.74"/>
+
+      <!-- Wall cores -->
+      <path d="M439 78 V314 M439 386 V628" stroke-width="1" stroke-opacity="0.58"/>
+      <path d="M34 343 H244 M315 343 H854" stroke-width="1" stroke-opacity="0.58"/>
+
+      <!-- Door swings -->
+      <path d="M446 314 A72 72 0 0 0 374 386" stroke-width="1.8" stroke-opacity="0.68"/>
+      <path d="M446 314 H374 V386" stroke-width="1.8" stroke-opacity="0.48"/>
+      <path d="M244 350 A71 71 0 0 1 315 421" stroke-width="1.8" stroke-opacity="0.68"/>
+      <path d="M244 350 V421 H315" stroke-width="1.8" stroke-opacity="0.48"/>
+      <path d="M652 181 A70 70 0 0 0 582 251" stroke-width="1.6" stroke-opacity="0.62"/>
+      <path d="M652 181 H582 V251" stroke-width="1.6" stroke-opacity="0.42"/>
+      <path d="M652 470 A67 67 0 0 1 719 537" stroke-width="1.6" stroke-opacity="0.62"/>
+      <path d="M652 470 V537 H719" stroke-width="1.6" stroke-opacity="0.42"/>
+
+      <!-- Windows and plan marks -->
+      <path d="M114 66 V78 M126 66 V78 M702 66 V78 M714 66 V78"
+            stroke-width="2.2"
+            stroke-opacity="0.7"/>
+      <path d="M22 194 H34 M22 206 H34 M854 510 H866 M854 522 H866"
+            stroke-width="2.2"
+            stroke-opacity="0.7"/>
+
+      <!-- Construction diagonals -->
+      <path d="M54 98 L188 232 M54 232 L188 98"
+            stroke-width="0.9"
+            stroke-dasharray="7 8"
+            stroke-opacity="0.16"/>
+      <path d="M680 386 L826 532 M680 532 L826 386"
+            stroke-width="0.9"
+            stroke-dasharray="7 8"
+            stroke-opacity="0.15"/>
+    </g>
+
+    <g id="dimension-lines"
+       fill="none"
+       stroke="#6F9FB5"
+       stroke-width="1"
+       stroke-opacity="0.48">
+      <path d="M22 674 H866 M22 660 V688 M446 660 V688 M866 660 V688"/>
+      <path d="M7 66 V640 M-7 66 H21 M-7 350 H21 M-7 640 H21"/>
+      <path d="M32 671 l12 -6 M32 671 l12 6 M436 671 l-12 -6 M436 671 l-12 6"/>
+      <path d="M456 671 l12 -6 M456 671 l12 6 M856 671 l-12 -6 M856 671 l-12 6"/>
+    </g>
+
+    <g id="room-labels"
+       font-family="Inter, Helvetica, Arial, sans-serif"
+       text-anchor="middle">
+      <g id="room-discovery">
+        <circle cx="239" cy="208" r="9" fill="#D5A94F"/>
+        <circle cx="239" cy="208" r="23" fill="none" stroke="#D5A94F" stroke-width="1" opacity="0.32"/>
+        <text x="239" y="265" fill="#F2F8FA" font-size="29" font-weight="600" letter-spacing="1.5">Discovery</text>
+        <text x="239" y="291" fill="#82B4C9" font-size="12" letter-spacing="3">LISTEN • DIAGNOSE</text>
+      </g>
+      <g id="room-demo">
+        <circle cx="554" cy="208" r="9" fill="#D5A94F"/>
+        <circle cx="554" cy="208" r="23" fill="none" stroke="#D5A94F" stroke-width="1" opacity="0.32"/>
+        <text x="554" y="265" fill="#F2F8FA" font-size="29" font-weight="600" letter-spacing="1.5">Demo</text>
+        <text x="554" y="291" fill="#82B4C9" font-size="12" letter-spacing="3">SHOW • PROVE</text>
+      </g>
+      <g id="room-docs">
+        <circle cx="241" cy="494" r="9" fill="#D5A94F"/>
+        <circle cx="241" cy="494" r="23" fill="none" stroke="#D5A94F" stroke-width="1" opacity="0.32"/>
+        <text x="241" y="551" fill="#F2F8FA" font-size="29" font-weight="600" letter-spacing="1.5">Docs</text>
+        <text x="241" y="577" fill="#82B4C9" font-size="12" letter-spacing="3">EXPLAIN • VERIFY</text>
+      </g>
+      <g id="room-support">
+        <circle cx="651" cy="494" r="9" fill="#D5A94F"/>
+        <circle cx="651" cy="494" r="23" fill="none" stroke="#D5A94F" stroke-width="1" opacity="0.32"/>
+        <text x="651" y="551" fill="#F2F8FA" font-size="29" font-weight="600" letter-spacing="1.5">Support</text>
+        <text x="651" y="577" fill="#82B4C9" font-size="12" letter-spacing="3">RESPOND • SUSTAIN</text>
+      </g>
+    </g>
+
+    <!-- A continuous record moving through recurring surfaces -->
+    <g id="trust-thread" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M239 208 C322 231 373 270 444 350 C512 428 563 460 651 494"
+            stroke="#D8AA50"
+            stroke-width="18"
+            stroke-opacity="0.08"
+            filter="url(#smallGlow)"/>
+      <path id="trust-flow"
+            d="M239 208 C322 231 373 270 444 350 C512 428 563 460 651 494"
+            stroke="#E6BD69"
+            stroke-width="2.6"
+            stroke-dasharray="4 10"
+            stroke-opacity="0.86"/>
+    </g>
+  </g>
+
+  <!-- CLOCK / WHEN -->
+  <g id="clock" filter="url(#clockShadow)">
+    <g id="clock-face">
+      <circle cx="1160" cy="450" r="354"
+              fill="#06192B"
+              fill-opacity="0.82"
+              stroke="#D3EDF5"
+              stroke-width="2"
+              stroke-opacity="0.22"/>
+      <circle cx="1160" cy="450" r="330"
+              fill="url(#clockGlass)"
+              stroke="#B9DDE9"
+              stroke-width="2.4"
+              stroke-opacity="0.72"/>
+      <circle cx="1160" cy="450" r="302"
+              fill="none"
+              stroke="#9BC7D8"
+              stroke-width="1"
+              stroke-opacity="0.26"/>
+      <circle cx="1160" cy="450" r="278"
+              fill="none"
+              stroke="#9BC7D8"
+              stroke-width="1"
+              stroke-dasharray="2 8"
+              stroke-opacity="0.25"/>
+    </g>
+
+    <g id="lifecycle-arcs" fill="none" stroke-linecap="round">
+      <path d="M1001 177 A330 330 0 0 1 1335 188"
+            stroke="#E6BC68"
+            stroke-width="8"
+            stroke-opacity="0.88"/>
+      <path d="M1407 245 A330 330 0 0 1 1456 554"
+            stroke="#9DC8D8"
+            stroke-width="8"
+            stroke-opacity="0.7"/>
+      <path d="M1366 681 A330 330 0 0 1 1033 726"
+            stroke="#6FA2B8"
+            stroke-width="8"
+            stroke-opacity="0.72"/>
+    </g>
+
+    <g id="clock-labels"
+       font-family="Inter, Helvetica, Arial, sans-serif"
+       fill="#EFF7F9"
+       font-weight="700"
+       font-size="15"
+       letter-spacing="4">
+      <text x="1160" y="124" text-anchor="middle">DISCOVERY</text>
+      <text x="1482" y="450"
+            text-anchor="middle"
+            transform="rotate(90 1482 450)">ARCHITECTURE</text>
+      <text x="1160" y="774" text-anchor="middle">ADOPTION</text>
+    </g>
+
+    <g id="hour-marks" transform="translate(1160 450)"
+       stroke="#D6EAF1"
+       stroke-linecap="round">
+      <g stroke-width="4" stroke-opacity="0.64">
+        <line x1="0" y1="-278" x2="0" y2="-254"/>
+        <line x1="0" y1="-278" x2="0" y2="-254" transform="rotate(90)"/>
+        <line x1="0" y1="-278" x2="0" y2="-254" transform="rotate(180)"/>
+        <line x1="0" y1="-278" x2="0" y2="-254" transform="rotate(270)"/>
+      </g>
+      <g stroke-width="2" stroke-opacity="0.42">
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(30)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(60)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(120)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(150)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(210)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(240)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(300)"/>
+        <line x1="0" y1="-278" x2="0" y2="-262" transform="rotate(330)"/>
+      </g>
+    </g>
+
+    <g id="clock-hands" stroke-linecap="round">
+      <g id="hour-hand">
+        <!-- Shadow rotates with the gold hand across the floor plan -->
+        <path d="M1160 450 L850 606"
+              stroke="#010A12"
+              stroke-width="25"
+              stroke-opacity="0.3"
+              filter="url(#softGlow)"/>
+        <path d="M1160 450 L850 606"
+              stroke="url(#handGradient)"
+              stroke-width="12"/>
+      </g>
+      <g id="minute-hand">
+        <path d="M1160 450 L1237 270"
+              stroke="#D9EEF4"
+              stroke-width="7"
+              stroke-opacity="0.9"/>
+      </g>
+      <g id="second-hand">
+        <path d="M1160 450 L1345 525"
+              stroke="#D9EEF4"
+              stroke-width="4"
+              stroke-opacity="0.64"/>
+      </g>
+      <circle cx="1160" cy="450" r="29"
+              fill="#07182A"
+              stroke="#E8C879"
+              stroke-width="5"/>
+      <circle cx="1160" cy="450" r="8" fill="#F1CE7E"/>
+    </g>
+
+    <g id="clock-caption"
+       font-family="Inter, Helvetica, Arial, sans-serif"
+       text-anchor="middle">
+      <text x="1160" y="525"
+            fill="#EAF5F8"
+            font-size="18"
+            font-weight="700"
+            letter-spacing="4">THE CLOCK</text>
+      <text x="1160" y="551"
+            fill="#8EBBCB"
+            font-size="12"
+            letter-spacing="3">WHEN TRUST ACCUMULATES</text>
+    </g>
+  </g>
+
+  <!-- Editorial footer note, independent and removable -->
+  <g id="footer-note" font-family="Inter, Helvetica, Arial, sans-serif">
+    <line x1="126" y1="839" x2="334" y2="839"
+          stroke="#D9AD55"
+          stroke-width="2"/>
+    <text x="126" y="824"
+          fill="#E7C270"
+          font-size="13"
+          font-weight="700"
+          letter-spacing="3">TWO STRUCTURES / ONE RELATIONSHIP</text>
+    <text x="126" y="864"
+          fill="#83AFC1"
+          font-size="12"
+          letter-spacing="2.2">WHERE YOU ARE TELLS YOU WHAT TO FIX.  WHEN YOU ARE TELLS YOU WHAT IT COSTS.</text>
+  </g>
+</svg>

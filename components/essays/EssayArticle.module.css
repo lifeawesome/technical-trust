@@ -69,6 +69,16 @@
   border: 1px solid rgba(148, 163, 184, 0.14);
 }
 
+.featuredSvg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: #0b1220;
+  overflow: hidden;
+}
+
 .tag {
   font-size: 11px;
   color: var(--text-body);

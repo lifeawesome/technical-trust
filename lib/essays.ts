@@ -15,6 +15,8 @@ export type EssayMeta = {
   /** Public path, e.g. `/featured/trust-trust.png`. */
   featuredImage?: string;
   featuredImageAlt?: string;
+  featuredImageWidth?: number;
+  featuredImageHeight?: number;
 };
 
 export type Essay = EssayMeta & { slug: string };
