@@ -1,6 +1,6 @@
 # The Technical Trust Canon
 
-**v1.0 — July 20, 2026**
+**v1.1 — July 27, 2026**
 
 This document is the source of truth for Technical Trust: the theorem, the models, the names, the voice, and the standing decisions. Every essay, Pattern, Practice, Field Guide, Chapter, page, and post is checked against this document. When the canon changes, the change is recorded in the amendment log at the bottom — in public terms, on the framework changelog. Nothing here is beyond revision; nothing here is revised silently.
 
@@ -12,7 +12,11 @@ This document is the source of truth for Technical Trust: the theorem, the model
 
 Technical trust is the confidence a person needs to make a high-stakes decision about a system they don't fully understand.
 
-**Trust has two sides of the table.** Buyers *check* for it. Practitioners *build* it. Technical Trust models both sides, and the bridge between them is one sentence:
+**Trust has two sides of the table.** Buyers *check* for it. Practitioners *build* it. Technical Trust models both sides — and the time across which the verdicts accumulate — with three canonical structures (see §2–§4). The bridge that joins all three:
+
+> Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen. The lifecycle is when the verdicts accumulate.
+
+The shorter two-structure bridge remains valid when the lifecycle is not in play:
 
 > Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen.
 
@@ -32,7 +36,7 @@ What a buyer is checking for, consciously or not, across the whole relationship:
 Two C's carry special structural roles:
 
 - **Competence is the precondition.** The map assumes it. Almost no Pattern is a competence failure — The Confidence Bluff is a candor failure committed by a competent person. Canonical teaching point: *you don't lose deals because you don't know enough; you lose them on the map.*
-- **Consistency is the accumulation law.** Trust is never built all at once; it is accumulated one interaction at a time. Consistency is why the framework is a grid filled over years, not a checklist completed once — and why the map has a changelog.
+- **Consistency is the accumulation law.** Trust is never built all at once; it is accumulated one interaction at a time. Formally, Consistency lives on the lifecycle axis (§4): pillar checks happen at surfaces; verdicts accumulate across stages. Consistency is the only C that cannot be passed in a single meeting. It is why the framework is a grid filled over years, not a checklist completed once — and why the map has a changelog.
 
 **Canonical home:** the buyer-facing essays (beginning with *What Is Technical Trust?*). **Future product:** The Trust Audit — the Four C's operationalized as a diagnostic rubric.
 
@@ -51,9 +55,47 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 | **Clarity** | Complexity translated, not performed. |
 | **Judgment** | Knowing when to simplify and when to go deep. |
 
-**Moments (columns):** Discovery · Demo · Docs · Support
+**Moments (columns) — the interaction surfaces:** Discovery · Demo · Docs · Support
 
-**The 16 pairs.** Every cell holds a Pattern (the failure) and its mirror Practice (the move):
+These columns are *surfaces*, not phases. They must never be presented as a sequence, funnel, or timeline. (See §4 for the relationship laws that bind surfaces to the Trust Lifecycle.)
+
+**The mirror law:** every failure on the map has an equal and opposite move. Brand compression: **"Flip it."**
+
+The Pattern/Practice registry for all sixteen cells is in §5.
+
+---
+
+## 4. The Trust Lifecycle (the time dimension)
+
+Technical Trust has three canonical structures, not two:
+
+1. **The Four C's** — the buyer-facing perception model (what is checked).
+2. **The Framework Map** — the practitioner-facing production model (where it is produced).
+3. **The Trust Lifecycle** — the temporal model (when it accumulates).
+
+The lifecycle is the stage sequence first published in Essay #1 (*What Is Technical Trust?*): **discovery → architecture → adoption**, with trust as the accumulating output across all three. Stages are periods in a technical relationship. They begin and end.
+
+### Relationship laws (binding)
+
+1. **Stages are when. Surfaces are where.** The map's columns (Discovery, Demo, Docs, Support) are interaction surfaces, not phases. They must never be presented as a sequence or a funnel.
+2. **Surfaces recur across stages.** No surface belongs to a stage. A demo can occur in the adoption stage; the Docs surface is often open before the vendor knows the relationship exists; Support carries most of the relationship's weight after signature. Stages end; surfaces don't.
+3. **The Discovery collision is resolved by register, not renaming.** "Discovery" (capitalized, standalone) always refers to the map surface — a conversation type. "The discovery stage" (lowercase, always accompanied by the word *stage*) refers to the lifecycle period. The stage is named for the surface because that is where its density lives; density is not confinement. Neither is renamed.
+4. **Consistency lives on the clock.** The accumulation law (trust cannot be sprinted) is formally located in the lifecycle dimension: pillar checks happen at surfaces; verdicts accumulate across stages. Consistency is the only C that cannot be passed in a single meeting.
+5. **The asymmetry law.** Trust is accumulated on the clock and forfeited on the map: built across stages, lost in moments.
+
+### Bridge sentence (canonical, joining all three structures)
+
+> Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen. The lifecycle is when the verdicts accumulate.
+
+The original two-structure bridge sentence (§1) remains valid for contexts where the lifecycle is not in play.
+
+**Canonical home of the lifecycle names:** Essay #1 is the source of record for the stage sequence. Public expression of this ruling ships as Essay #3.
+
+---
+
+## 5. The Pattern/Practice Registry
+
+Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 | Cell | Pattern | Practice | The move |
 |---|---|---|---|
@@ -76,11 +118,9 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 
 † Flagged weak; revision expected. Renames are amendments, not failures.
 
-**The mirror law:** every failure on the map has an equal and opposite move. Brand compression: **"Flip it."**
-
 ---
 
-## 4. Content Taxonomy & Lifecycle
+## 6. Content Taxonomy & Publication Lifecycle
 
 | Format | Tag | Length | Role |
 |---|---|---|---|
@@ -89,11 +129,11 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 | Chapter | [C] | varies | Accumulates into *The Guide to Technical Trust* |
 | Essay | — | long-form | Buyer-side perspective; home of the Four C's |
 
-**Lifecycle:** predicted (ghost on map) → announced (max 2–3 at a time; on `/patterns` as "Named, not yet written") → published. **A Practice lags its Pattern by one step:** ghosted until the Pattern publishes; revealed (linking to the Pattern's anatomy-of-the-fix) on publish; amber with its own link when its Field Guide publishes. Every Friday changes both faces of the map.
+**Publication lifecycle:** predicted (ghost on map) → announced (max 2–3 at a time; on `/patterns` as "Named, not yet written") → published. **A Practice lags its Pattern by one step:** ghosted until the Pattern publishes; revealed (linking to the Pattern's anatomy-of-the-fix) on publish; amber with its own link when its Field Guide publishes. Every Friday changes both faces of the map.
 
 ---
 
-## 5. Naming Laws
+## 7. Naming Laws
 
 1. Patterns are "The ___" — concrete, a little painful, instantly recognizable from the inside.
 2. Practices are **moves, never virtues.** If it can't be executed tomorrow, it isn't a Practice.
@@ -103,15 +143,15 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 
 ---
 
-## 6. Audience & Positioning
+## 8. Audience & Positioning
 
 **Primary:** practitioners — Sales Engineers, Solutions Architects, Developer Advocates, support engineers; anyone who sits between complex systems and the humans betting on them. **Secondary (the mirror reader):** buyers and decision-makers. The homepage leads practitioner-first and acknowledges buyers in exactly one mirror line. The essays may speak buyer-first; they must reference the Four C's, not restate the map rows as if they were the perception model.
 
-**The models never blur.** The Four C's are what is *perceived across a relationship*. The map rows are what is *performed in a moment*. Content that confuses the two is off-canon.
+**The models never blur.** The Four C's are what is *perceived across a relationship*. The map rows are what is *performed in a moment*. The Trust Lifecycle is *when* the verdicts accumulate. Content that confuses these is off-canon.
 
 ---
 
-## 7. Voice
+## 9. Voice
 
 - Manifesto cadence for framing copy: short declarative lines, one idea per line.
 - Honesty as competitive advantage. "I don't know. I'll find out. Here's what we do know."
@@ -121,7 +161,7 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 
 ---
 
-## 8. Infrastructure Canon
+## 10. Infrastructure Canon
 
 - `patterns.ts` is the single source of truth for all Pattern/Practice data; `framework.ts` for grid structure. No duplication, no CMS until there is a second contributor.
 - The homepage renders from data, never hand-written content lists.
@@ -132,7 +172,7 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 
 ---
 
-## 9. What Technical Trust Is NOT
+## 11. What Technical Trust Is NOT
 
 - Not finished. The map ships incomplete on purpose; the version number is a feature.
 - Not a resume site. The work is the evidence.
@@ -141,8 +181,9 @@ What a practitioner does, in specific moments, to build the trust buyers are che
 
 ---
 
-## 10. Amendment Log
+## 12. Amendment Log
 
 | Version | Date | Amendment |
 |---|---|---|
+| v1.1 | 2026-07-27 | The Lifecycle Ruling. Resolved the open tension between Essay #1's deal-stage lifecycle (discovery → architecture → adoption) and the framework map's interaction surfaces (Discovery, Demo, Docs, Support). Ruling: the lifecycle is canonized as a third structure — the time dimension — with binding relationship laws (stages are when / surfaces are where; surfaces recur across stages; Discovery collision resolved by register; Consistency located on the lifecycle axis; asymmetry law). Essay #1 requires no revision. Public expression ships as Essay #3. |
 | v1.0 | 2026-07-20 | Canon established. Two-sided theorem adopted: the Four C's canonized as the perception model; the map as the production model. Competence designated precondition; Consistency designated accumulation law. |

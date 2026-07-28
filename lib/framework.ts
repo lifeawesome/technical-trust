@@ -103,6 +103,11 @@ export const changelog: ChangelogEntry[] = [
     date: "2026-07-16",
     entry: "The map gained a second face: the Practices.",
   },
+  {
+    date: "2026-07-27",
+    entry:
+      "Added the Trust Lifecycle as the third canonical structure (time dimension). Map columns unchanged. No data-file or UI changes; the ruling ships publicly through Essay #3.",
+  },
 ];
 
 export const frameworkIntro = [
@@ -136,8 +141,12 @@ export function frameworkViewHref(view: FrameworkView): string {
   return view === "practices" ? "/framework?view=practices" : "/framework";
 }
 
-function findPattern(rowId: string, colId: string): Pattern | undefined {
-  return patterns.find((p) => p.rowId === rowId && p.colId === colId);
+function findPattern(
+  rowId: string,
+  colId: string,
+  patternList: readonly Pattern[] = patterns,
+): Pattern | undefined {
+  return patternList.find((p) => p.rowId === rowId && p.colId === colId);
 }
 
 function patternFaceCell(pattern: Pattern): FrameworkCell {
@@ -227,8 +236,9 @@ export function getCell(
   rowId: string,
   colId: string,
   view: FrameworkView = "patterns",
+  patternList: readonly Pattern[] = patterns,
 ): FrameworkCell {
-  const pattern = findPattern(rowId, colId);
+  const pattern = findPattern(rowId, colId, patternList);
   if (pattern) {
     return view === "practices"
       ? practiceFaceCell(pattern)

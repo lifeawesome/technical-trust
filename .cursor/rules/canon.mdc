@@ -7,19 +7,28 @@ alwaysApply: true
 
 Full canon: docs/CANON.md — read it before any content, naming, data-model, or copy change. The canon wins over this digest if they ever disagree.
 
-## The theorem is two-sided. The models NEVER blur.
+## Three structures. They NEVER blur.
 - The Four C's (Competence, Comprehension, Candor, Consistency) are the PERCEPTION model — what a BUYER checks for across a relationship. They are NOT rows on the map.
-- The map rows (Honesty, Understanding, Clarity, Judgment) are the PRODUCTION model — what a PRACTITIONER does in a moment (Discovery, Demo, Docs, Support). They are NOT what buyers check for.
-- Bridge sentence (the only sanctioned way to connect them): "Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen."
-- Competence is the precondition the map assumes. Consistency is the accumulation law. Never place either on the grid.
+- The map rows (Honesty, Understanding, Clarity, Judgment) are the PRODUCTION model — what a PRACTITIONER does in a moment. Map columns (Discovery, Demo, Docs, Support) are interaction SURFACES, not phases — never a sequence, funnel, or timeline.
+- The Trust Lifecycle (discovery → architecture → adoption) is the TIME dimension — when verdicts accumulate. Stages begin and end; surfaces recur across stages.
+- Bridge (all three): "Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen. The lifecycle is when the verdicts accumulate."
+- Shorter bridge (lifecycle not in play): "Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen."
+- Competence is the precondition the map assumes. Consistency lives on the clock (lifecycle axis). Never place either on the grid.
+- Asymmetry law: trust is accumulated on the clock and forfeited on the map.
+
+## Register: "Discovery" vs "the discovery stage"
+- "Discovery" (capitalized, standalone) = the map surface (a conversation type).
+- "The discovery stage" (lowercase, always with the word *stage*) = the lifecycle period.
+- Do not rename either. Do not treat density as confinement.
 
 ## Names are canonical.
-- The 16 Pattern/Practice pairs are defined in docs/CANON.md §3. `lib/patterns.ts` must match the canon exactly.
+- The 16 Pattern/Practice pairs are defined in docs/CANON.md §5. `lib/patterns.ts` must match the canon exactly.
 - Never invent, rename, or "improve" a Pattern or Practice name in passing. A rename is an AMENDMENT: update docs/CANON.md (bump version, add amendment-log row), update patterns.ts, add a framework changelog entry — all in the same change.
 - Naming laws: Patterns are "The ___", concrete and recognizable from the inside. Practices are executable MOVES, never virtues. Pairs read as mirrors. Max 2–3 announced Patterns at any time.
 
 ## Data laws.
 - `lib/patterns.ts` is the single source of truth for Pattern/Practice data; `lib/framework.ts` for grid structure. Never duplicate this data in components, pages, or copy.
+- Kit may hydrate publish fields (status, readUrl, date) by matching edition titles to existing Pattern names — it must never invent names or cells. See `lib/pattern-hydration.ts`.
 - Pages render from data, never hand-written content lists (the homepage staleness rule).
 - Shareable state lives in URLs, never localStorage.
 - Canonical edition domain: newsletter.technicaltrust.org.
