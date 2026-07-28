@@ -108,6 +108,11 @@ export const changelog: ChangelogEntry[] = [
     entry:
       "Added the Trust Lifecycle as the third canonical structure (time dimension). Map columns unchanged. No data-file or UI changes; the ruling ships publicly through Essay #3.",
   },
+  {
+    date: "2026-07-27",
+    entry:
+      "Canonized: Consistency has no surface — three pillar checks live on the map, Consistency lives on the clock. Map columns unchanged.",
+  },
 ];
 
 export const frameworkIntro = [

@@ -1,6 +1,6 @@
 # The Technical Trust Canon
 
-**v1.1 — July 27, 2026**
+**v1.2 — July 27, 2026**
 
 This document is the source of truth for Technical Trust: the theorem, the models, the names, the voice, and the standing decisions. Every essay, Pattern, Practice, Field Guide, Chapter, page, and post is checked against this document. When the canon changes, the change is recorded in the amendment log at the bottom — in public terms, on the framework changelog. Nothing here is beyond revision; nothing here is revised silently.
 
@@ -36,7 +36,7 @@ What a buyer is checking for, consciously or not, across the whole relationship:
 Two C's carry special structural roles:
 
 - **Competence is the precondition.** The map assumes it. Almost no Pattern is a competence failure — The Confidence Bluff is a candor failure committed by a competent person. Canonical teaching point: *you don't lose deals because you don't know enough; you lose them on the map.*
-- **Consistency is the accumulation law.** Trust is never built all at once; it is accumulated one interaction at a time. Formally, Consistency lives on the lifecycle axis (§4): pillar checks happen at surfaces; verdicts accumulate across stages. Consistency is the only C that cannot be passed in a single meeting. It is why the framework is a grid filled over years, not a checklist completed once — and why the map has a changelog.
+- **Consistency is the accumulation law.** Trust is never built all at once; it is accumulated one interaction at a time. Formally, Consistency lives on the lifecycle axis (§4). **Consistency has no surface** — it is not a behavior observed in a moment, but a *record* of behavior read off the clock. Competence, comprehension, and candor can be checked at a surface; Consistency cannot. Three of the checks live on the map; the fourth lives on the clock. That is why trust cannot be sprinted, why the framework is a grid filled over years rather than a checklist completed once, and why the map has a changelog.
 
 **Canonical home:** the buyer-facing essays (beginning with *What Is Technical Trust?*). **Future product:** The Trust Audit — the Four C's operationalized as a diagnostic rubric.
 
@@ -80,8 +80,8 @@ The lifecycle is the stage sequence first published in Essay #1 (*What Is Techni
 1. **Stages are when. Surfaces are where.** The map's columns (Discovery, Demo, Docs, Support) are interaction surfaces, not phases. They must never be presented as a sequence or a funnel.
 2. **Surfaces recur across stages.** No surface belongs to a stage. A demo can occur in the adoption stage; the Docs surface is often open before the vendor knows the relationship exists; Support carries most of the relationship's weight after signature. Stages end; surfaces don't.
 3. **The Discovery collision is resolved by register, not renaming.** "Discovery" (capitalized, standalone) always refers to the map surface — a conversation type. "The discovery stage" (lowercase, always accompanied by the word *stage*) refers to the lifecycle period. The stage is named for the surface because that is where its density lives; density is not confinement. Neither is renamed.
-4. **Consistency lives on the clock.** The accumulation law (trust cannot be sprinted) is formally located in the lifecycle dimension: pillar checks happen at surfaces; verdicts accumulate across stages. Consistency is the only C that cannot be passed in a single meeting.
-5. **The asymmetry law.** Trust is accumulated on the clock and forfeited on the map: built across stages, lost in moments.
+4. **Consistency lives on the clock — and has no surface.** Consistency isn't a behavior; it's a record of behavior. A buyer can fail a comprehension or candor check inside a single meeting; Consistency is unanswerable inside any single moment because the question is not *was that answer honest* but *has every answer been honest*. Three of the four pillar checks live on the map; Consistency lives only on the clock. That structural reason is why the lifecycle had to be a structure of its own, and why trust cannot be sprinted.
+5. **The asymmetry law.** Trust is accumulated on the clock and forfeited on the map: built across stages (meeting after meeting of the record holding), lost in a moment on a surface (one surprise forcing a re-audit of everything the record contained).
 
 ### Bridge sentence (canonical, joining all three structures)
 
@@ -185,5 +185,6 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 | Version | Date | Amendment |
 |---|---|---|
+| v1.2 | 2026-07-27 | Consistency has no surface. Elevated Essay #3's structural claim into the constitution: Consistency is a record of behavior, not a behavior; three pillar checks live on the map, the fourth lives only on the clock. Tightens §2 (accumulation law) and §4 law 4 so the canon and *Trust Has a Map and a Clock* agree. Map columns unchanged. |
 | v1.1 | 2026-07-27 | The Lifecycle Ruling. Resolved the open tension between Essay #1's deal-stage lifecycle (discovery → architecture → adoption) and the framework map's interaction surfaces (Discovery, Demo, Docs, Support). Ruling: the lifecycle is canonized as a third structure — the time dimension — with binding relationship laws (stages are when / surfaces are where; surfaces recur across stages; Discovery collision resolved by register; Consistency located on the lifecycle axis; asymmetry law). Essay #1 requires no revision. Public expression ships as Essay #3. |
 | v1.0 | 2026-07-20 | Canon established. Two-sided theorem adopted: the Four C's canonized as the perception model; the map as the production model. Competence designated precondition; Consistency designated accumulation law. |
