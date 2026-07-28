@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import TrackedCtaLink from "@/components/TrackedCtaLink";
 import styles from "@/components/newsletter/NewsletterArchive.module.css";
 import { formatEssayDate } from "@/lib/essays";
 import { getNewsletterIssues } from "@/lib/kit-broadcasts";
@@ -59,9 +59,15 @@ export default async function NewsletterPage() {
         <p className={styles.subscribeText}>
           Get new chapters in your inbox as they publish.
         </p>
-        <Link href="/#subscribe" className={styles.subscribeLink}>
+        <TrackedCtaLink
+          href="/#subscribe"
+          className={styles.subscribeLink}
+          ctaId="newsletter_subscribe"
+          ctaText="Subscribe on the homepage"
+          location="newsletter_page"
+        >
           Subscribe on the homepage →
-        </Link>
+        </TrackedCtaLink>
       </div>
     </div>
   );

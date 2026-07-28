@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import FrameworkExplorer from "@/components/FrameworkExplorer";
+import TrackedCtaLink from "@/components/TrackedCtaLink";
 import {
   changelog,
   frameworkIntro,
@@ -69,9 +69,15 @@ export default async function FrameworkPage({
         <p className={styles.participationBody}>
           Reply to any issue of Technical Trust Weekly and tell me.
         </p>
-        <Link href="/#subscribe" className={styles.participationLink}>
+        <TrackedCtaLink
+          href="/#subscribe"
+          className={styles.participationLink}
+          ctaId="framework_subscribe"
+          ctaText="Subscribe to the newsletter"
+          location="framework_page"
+        >
           Subscribe to the newsletter →
-        </Link>
+        </TrackedCtaLink>
       </section>
 
       <section className={styles.changelog} aria-labelledby="changelog-heading">

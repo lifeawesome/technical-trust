@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { trackCtaClick } from "@/lib/analytics";
 import { manifestoGroups, type ManifestoStanza } from "./content";
 import styles from "./Manifesto.module.css";
 
@@ -65,7 +66,18 @@ export default function ManifestoBody() {
         <p className={styles.signature}>— Dan Davidson</p>
         <p className={styles.brand}>Technical Trust</p>
 
-        <Link href="/#subscribe" className={styles.cta}>
+        <Link
+          href="/#subscribe"
+          className={styles.cta}
+          onClick={() =>
+            trackCtaClick({
+              ctaId: "manifesto_subscribe",
+              ctaText: "Read Technical Trust Weekly",
+              location: "manifesto_closing",
+              destination: "/#subscribe",
+            })
+          }
+        >
           Read Technical Trust Weekly →
         </Link>
       </div>

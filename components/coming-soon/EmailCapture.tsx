@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackSubscribeSuccess } from "@/lib/analytics";
 import { subscribeForm } from "@/lib/content";
 import styles from "./EmailCapture.module.css";
 
@@ -26,6 +27,7 @@ export default function EmailCapture() {
       });
 
       if (!response.ok) throw new Error("Subscribe failed");
+      trackSubscribeSuccess("homepage_subscribe");
       setStatus("success");
       setEmail("");
     } catch {

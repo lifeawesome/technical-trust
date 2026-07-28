@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PatternCard from "@/components/PatternCard";
+import TrackedCtaLink from "@/components/TrackedCtaLink";
 import { getHydratedPatterns } from "@/lib/pattern-hydration";
 import {
   getAnnouncedPatterns,
@@ -93,9 +94,15 @@ export default async function PatternsPage() {
         <h2 id="subscribe-heading" className={styles.sectionHeading}>
           Patterns are named first in the newsletter.
         </h2>
-        <Link href="/#subscribe" className={styles.subscribeLink}>
+        <TrackedCtaLink
+          href="/#subscribe"
+          className={styles.subscribeLink}
+          ctaId="patterns_subscribe"
+          ctaText="Subscribe to Technical Trust Weekly"
+          location="patterns_page"
+        >
           Subscribe to Technical Trust Weekly →
-        </Link>
+        </TrackedCtaLink>
       </section>
 
       <p className={styles.frameworkLink}>

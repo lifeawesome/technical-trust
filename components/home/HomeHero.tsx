@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { trackCtaClick } from "@/lib/analytics";
 import styles from "./Home.module.css";
 
 type HomeHeroProps = {
@@ -75,13 +76,32 @@ export default function HomeHero({
       </Stagger>
 
       <Stagger delay={0.24} reducedMotion={reducedMotion} className={styles.ctas}>
-        <Link href="/framework" className={styles.ctaPrimary}>
+        <Link
+          href="/framework"
+          className={styles.ctaPrimary}
+          onClick={() =>
+            trackCtaClick({
+              ctaId: "home_explore_framework",
+              ctaText: "Explore the framework",
+              location: "homepage_hero",
+              destination: "/framework",
+            })
+          }
+        >
           Explore the framework →
         </Link>
         <a
           href={latestPatternUrl}
           className={styles.ctaSecondary}
           aria-label={`Read the latest Pattern, ${latestPatternName}`}
+          onClick={() =>
+            trackCtaClick({
+              ctaId: "home_latest_pattern",
+              ctaText: "Read the latest Pattern",
+              location: "homepage_hero",
+              destination: latestPatternUrl,
+            })
+          }
           {...(external
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
