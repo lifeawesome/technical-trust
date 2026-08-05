@@ -113,6 +113,11 @@ export const changelog: ChangelogEntry[] = [
     entry:
       "Canonized: Consistency has no surface — three pillar checks live on the map, Consistency lives on the clock. Map columns unchanged.",
   },
+  {
+    date: "2026-08-05",
+    entry:
+      "Named the Trust Map Diagnostic (practitioner map self-assessment). Trust Audit remains the future Four C's product. Map columns unchanged.",
+  },
 ];
 
 export const frameworkIntro = [

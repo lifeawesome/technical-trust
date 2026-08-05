@@ -5,11 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { trackCtaClick } from "@/lib/analytics";
 import styles from "./Home.module.css";
 
-type HomeHeroProps = {
-  latestPatternUrl: string;
-  latestPatternName: string;
-};
-
 const ease = [0.22, 1, 0.36, 1] as const;
 
 function Stagger({
@@ -39,12 +34,8 @@ function Stagger({
   );
 }
 
-export default function HomeHero({
-  latestPatternUrl,
-  latestPatternName,
-}: HomeHeroProps) {
+export default function HomeHero() {
   const reducedMotion = useReducedMotion();
-  const external = /^https?:\/\//i.test(latestPatternUrl);
 
   return (
     <header className={styles.hero}>
@@ -90,24 +81,20 @@ export default function HomeHero({
         >
           Explore the framework →
         </Link>
-        <a
-          href={latestPatternUrl}
+        <Link
+          href="/diagnostic"
           className={styles.ctaSecondary}
-          aria-label={`Read the latest Pattern, ${latestPatternName}`}
           onClick={() =>
             trackCtaClick({
-              ctaId: "home_latest_pattern",
-              ctaText: "Read the latest Pattern",
+              ctaId: "home_trust_map_diagnostic",
+              ctaText: "Take the Trust Map Diagnostic",
               location: "homepage_hero",
-              destination: latestPatternUrl,
+              destination: "/diagnostic",
             })
           }
-          {...(external
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
         >
-          Read the latest Pattern →
-        </a>
+          Take the Trust Map Diagnostic →
+        </Link>
       </Stagger>
     </header>
   );

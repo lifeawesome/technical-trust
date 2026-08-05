@@ -31,3 +31,24 @@ export function trackSubscribeSuccess(location = "homepage_subscribe") {
     lead_source: location,
   });
 }
+
+export function trackDiagnosticStarted() {
+  sendGTMEvent({
+    event: "diagnostic_started",
+  });
+}
+
+export function trackDiagnosticCompleted(weakestCell?: string) {
+  sendGTMEvent({
+    event: "diagnostic_completed",
+    weakest_cell: weakestCell,
+  });
+}
+
+export function trackDiagnosticUnlocked(weakestCell?: string) {
+  sendGTMEvent({
+    event: "diagnostic_unlocked",
+    weakest_cell: weakestCell,
+  });
+  trackSubscribeSuccess("trust_map_diagnostic");
+}

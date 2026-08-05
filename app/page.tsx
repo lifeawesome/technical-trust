@@ -44,10 +44,7 @@ export default async function Home() {
   return (
     <PublicationShell>
       <div className={styles.page}>
-        <HomeHero
-          latestPatternUrl={newest.readUrl}
-          latestPatternName={newest.name}
-        />
+        <HomeHero />
 
         <HomeFrameworkEmbed patterns={patterns} />
 

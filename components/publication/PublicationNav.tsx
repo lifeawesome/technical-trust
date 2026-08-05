@@ -17,7 +17,8 @@ export type PublicationNavActive =
   | "newsletter"
   | "manifesto"
   | "framework"
-  | "patterns";
+  | "patterns"
+  | "diagnostic";
 
 type PublicationNavProps = {
   activeNav?: PublicationNavActive;
@@ -26,6 +27,7 @@ type PublicationNavProps = {
 const FRAMEWORK_LINKS = [
   { href: "/framework", label: "Map", id: "framework" as const },
   { href: "/patterns", label: "Patterns", id: "patterns" as const },
+  { href: "/diagnostic", label: "Diagnostic", id: "diagnostic" as const },
 ];
 
 const WRITING_LINKS = [
@@ -35,7 +37,11 @@ const WRITING_LINKS = [
 ];
 
 function isFrameworkActive(activeNav?: PublicationNavActive) {
-  return activeNav === "framework" || activeNav === "patterns";
+  return (
+    activeNav === "framework" ||
+    activeNav === "patterns" ||
+    activeNav === "diagnostic"
+  );
 }
 
 function isWritingActive(activeNav?: PublicationNavActive) {

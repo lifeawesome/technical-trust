@@ -64,19 +64,20 @@ export default async function FrameworkPage({
 
       <section className={styles.participation} aria-labelledby="participation-heading">
         <h2 id="participation-heading" className={styles.sectionHeading}>
-          Which cell should I draw next?
+          Score yourself on the map.
         </h2>
         <p className={styles.participationBody}>
-          Reply to any issue of Technical Trust Weekly and tell me.
+          Sixteen questions. One per cell. Unlock a heatmap tied to the Patterns
+          that match where you&apos;re weak.
         </p>
         <TrackedCtaLink
-          href="/#subscribe"
+          href="/diagnostic"
           className={styles.participationLink}
-          ctaId="framework_subscribe"
-          ctaText="Subscribe to the newsletter"
+          ctaId="framework_diagnostic"
+          ctaText="Take the Trust Map Diagnostic"
           location="framework_page"
         >
-          Subscribe to the newsletter →
+          Take the Trust Map Diagnostic →
         </TrackedCtaLink>
       </section>
 

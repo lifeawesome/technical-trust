@@ -1,6 +1,6 @@
 # The Technical Trust Canon
 
-**v1.2 — July 27, 2026**
+**v1.3 — August 5, 2026**
 
 This document is the source of truth for Technical Trust: the theorem, the models, the names, the voice, and the standing decisions. Every essay, Pattern, Practice, Field Guide, Chapter, page, and post is checked against this document. When the canon changes, the change is recorded in the amendment log at the bottom — in public terms, on the framework changelog. Nothing here is beyond revision; nothing here is revised silently.
 
@@ -38,7 +38,7 @@ Two C's carry special structural roles:
 - **Competence is the precondition.** The map assumes it. Almost no Pattern is a competence failure — The Confidence Bluff is a candor failure committed by a competent person. Canonical teaching point: *you don't lose deals because you don't know enough; you lose them on the map.*
 - **Consistency is the accumulation law.** Trust is never built all at once; it is accumulated one interaction at a time. Formally, Consistency lives on the lifecycle axis (§4). **Consistency has no surface** — it is not a behavior observed in a moment, but a *record* of behavior read off the clock. Competence, comprehension, and candor can be checked at a surface; Consistency cannot. Three of the checks live on the map; the fourth lives on the clock. That is why trust cannot be sprinted, why the framework is a grid filled over years rather than a checklist completed once, and why the map has a changelog.
 
-**Canonical home:** the buyer-facing essays (beginning with *What Is Technical Trust?*). **Future product:** The Trust Audit — the Four C's operationalized as a diagnostic rubric.
+**Canonical home:** the buyer-facing essays (beginning with *What Is Technical Trust?*). **Future product:** The Trust Audit — the Four C's operationalized as a diagnostic rubric for teams and managers. Do not conflate it with the Trust Map Diagnostic (§3).
 
 ---
 
@@ -62,6 +62,10 @@ These columns are *surfaces*, not phases. They must never be presented as a sequ
 **The mirror law:** every failure on the map has an equal and opposite move. Brand compression: **"Flip it."**
 
 The Pattern/Practice registry for all sixteen cells is in §5.
+
+**Product on this side:** The **Trust Map Diagnostic** — a practitioner self-assessment over the sixteen map cells (Likert items, one per cell). It is a lead magnet and teaching tool: scores surface as a heatmap tied to Pattern/Practice guidance. It measures production (what the SE does on surfaces), not perception (what the buyer checks across the relationship).
+
+**Do not blur products.** The Trust Map Diagnostic lives on the map. The Trust Audit (future) lives on the Four C's. Site copy, naming, and results UI must keep them distinct.
 
 ---
 
@@ -185,6 +189,7 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 | Version | Date | Amendment |
 |---|---|---|
+| v1.3 | 2026-08-05 | Named products on each side of the table. Trust Map Diagnostic = practitioner self-assessment on the production map (lead magnet; heatmap → Pattern/Practice). Trust Audit remains the future Four C's perception product for teams/managers. §2 and §3 updated so the two never blur in copy or UI. |
 | v1.2 | 2026-07-27 | Consistency has no surface. Elevated Essay #3's structural claim into the constitution: Consistency is a record of behavior, not a behavior; three pillar checks live on the map, the fourth lives only on the clock. Tightens §2 (accumulation law) and §4 law 4 so the canon and *Trust Has a Map and a Clock* agree. Map columns unchanged. |
 | v1.1 | 2026-07-27 | The Lifecycle Ruling. Resolved the open tension between Essay #1's deal-stage lifecycle (discovery → architecture → adoption) and the framework map's interaction surfaces (Discovery, Demo, Docs, Support). Ruling: the lifecycle is canonized as a third structure — the time dimension — with binding relationship laws (stages are when / surfaces are where; surfaces recur across stages; Discovery collision resolved by register; Consistency located on the lifecycle axis; asymmetry law). Essay #1 requires no revision. Public expression ships as Essay #3. |
 | v1.0 | 2026-07-20 | Canon established. Two-sided theorem adopted: the Four C's canonized as the perception model; the map as the production model. Competence designated precondition; Consistency designated accumulation law. |
