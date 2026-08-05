@@ -1,14 +1,21 @@
 import { coordinateLabel } from "@/lib/framework";
 import {
+  patternWaitlistTagName,
+  patternWeakInterestTagName,
+} from "@/lib/kit-naming";
+import {
   type Pattern,
   patterns,
   patternHref,
   isExternalUrl,
 } from "@/lib/patterns";
 
+export { patternWaitlistTagName, patternWeakInterestTagName };
+
 /**
  * Waitlist / coming-soon helpers.
  * Pattern names and publish status always come from patterns.ts.
+ * Kit tag/broadcast naming: see lib/kit-naming.ts.
  */
 
 export function getPatternBySlug(slug: string): Pattern | undefined {
@@ -21,14 +28,6 @@ export function isPatternPublished(pattern: Pattern): boolean {
 
 export function isPatternComingSoon(pattern: Pattern): boolean {
   return pattern.status === "predicted" || pattern.status === "announced";
-}
-
-export function patternWaitlistTagName(slug: string): string {
-  return `pattern-${slug}-waitlist`;
-}
-
-export function patternWeakInterestTagName(slug: string): string {
-  return `pattern-${slug}-weak`;
 }
 
 export function comingSoonHref(slug: string): string {
