@@ -49,11 +49,20 @@ export default function CellGuidanceCard({
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read the edition →
+              {guidance.linkLabel}
             </a>
           ) : (
-            <Link href={guidance.href} className={styles.cardLink}>
-              See this Pattern →
+            <Link
+              href={
+                guidance.comingSoon && mode === "weak"
+                  ? `${guidance.href}?source=diagnostic&score=${cell.score}`
+                  : guidance.href
+              }
+              className={styles.cardLink}
+            >
+              {mode === "strong" && guidance.comingSoon
+                ? "See this Pattern →"
+                : guidance.linkLabel}
             </Link>
           )}
         </>

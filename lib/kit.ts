@@ -79,6 +79,39 @@ export async function tagKitSubscriber(apiKey: string, tagId: string, emailAddre
   throw new Error(await parseKitError(response));
 }
 
+/**
+ * Create or fetch a Kit tag by name (idempotent).
+ * Returns the numeric tag id as a string.
+ */
+export async function ensureKitTag(apiKey: string, name: string): Promise<string> {
+  const response = await fetch(`${KIT_API_BASE}/tags`, {
+    method: "POST",
+    headers: kitHeaders(apiKey),
+    body: JSON.stringify({ name }),
+  });
+
+  if (response.status !== 200 && response.status !== 201) {
+    throw new Error(await parseKitError(response));
+  }
+
+  const data = (await response.json()) as { tag?: { id?: number } };
+  if (!data.tag?.id) {
+    throw new Error(`Kit tag create returned no id for "${name}"`);
+  }
+
+  return String(data.tag.id);
+}
+
+/** Ensure tag exists, then apply it to a subscriber (must already exist). */
+export async function tagKitSubscriberByName(
+  apiKey: string,
+  tagName: string,
+  emailAddress: string,
+) {
+  const tagId = await ensureKitTag(apiKey, tagName);
+  await tagKitSubscriber(apiKey, tagId, emailAddress);
+}
+
 export async function subscribeEmailToKit(
   apiKey: string,
   formId: string,

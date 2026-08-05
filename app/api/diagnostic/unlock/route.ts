@@ -4,6 +4,7 @@ import {
   getDiagnosticResultByToken,
   unlockDiagnosticResult,
 } from "@/lib/diagnostic/data";
+import { segmentDiagnosticWeakCells } from "@/lib/diagnostic/kit-segmentation";
 import { SITE_URL } from "@/lib/content";
 import { subscribeEmailToKit } from "@/lib/kit";
 import { isSupabaseConfigured } from "@/lib/supabase/server";
@@ -69,6 +70,17 @@ export async function POST(request: Request) {
     );
 
     await subscribeEmailToKit(apiKey, formId, email, referrer, tagId);
+
+    try {
+      await segmentDiagnosticWeakCells(
+        apiKey,
+        email,
+        existing.weakest_cells ?? [],
+      );
+    } catch (segmentError) {
+      console.warn("Diagnostic Kit segmentation failed (non-blocking):", segmentError);
+    }
+
     await unlockDiagnosticResult(token, email);
 
     return NextResponse.json({ ok: true });

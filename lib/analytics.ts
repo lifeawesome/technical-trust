@@ -52,3 +52,21 @@ export function trackDiagnosticUnlocked(weakestCell?: string) {
   });
   trackSubscribeSuccess("trust_map_diagnostic");
 }
+
+export function trackPatternWaitlistSignup({
+  patternSlug,
+  source,
+  weakCellScore,
+}: {
+  patternSlug: string;
+  source: string;
+  weakCellScore?: number;
+}) {
+  sendGTMEvent({
+    event: "pattern_waitlist_signup",
+    pattern_slug: patternSlug,
+    lead_source: source,
+    weak_cell_score: weakCellScore,
+  });
+  trackSubscribeSuccess(`pattern_waitlist_${patternSlug}`);
+}

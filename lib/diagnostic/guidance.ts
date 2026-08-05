@@ -3,12 +3,8 @@ import {
   type FrameworkRow,
   createCellKey,
 } from "@/lib/diagnostic/types";
-import {
-  isExternalUrl,
-  patternHref,
-  patterns,
-  type Pattern,
-} from "@/lib/patterns";
+import { getPatternLinkForDiagnostic } from "@/lib/pattern-coming-soon";
+import { patterns, type Pattern } from "@/lib/patterns";
 
 export interface CellGuidance {
   row: FrameworkRow;
@@ -18,6 +14,8 @@ export interface CellGuidance {
   blurb: string;
   href: string;
   external: boolean;
+  linkLabel: string;
+  comingSoon: boolean;
 }
 
 /**
@@ -74,15 +72,16 @@ export function getCellGuidance(
   if (!pattern) return null;
 
   const key = createCellKey(row, column);
-  const href = pattern.readUrl ?? patternHref(pattern.id);
-  const external = pattern.readUrl ? isExternalUrl(pattern.readUrl) : false;
+  const link = getPatternLinkForDiagnostic(pattern);
 
   return {
     row,
     column,
     pattern,
     blurb: BLURBS[key] ?? pattern.practice.move,
-    href,
-    external,
+    href: link.href,
+    external: link.external,
+    linkLabel: link.label,
+    comingSoon: link.comingSoon,
   };
 }
