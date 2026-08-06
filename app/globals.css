@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./brand-tokens.css";
 
 @theme {
   --color-slate-base: #0f172a;

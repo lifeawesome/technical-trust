@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { trackCtaClick } from "@/lib/analytics";
+import PrecisionCycleHeroMark from "./PrecisionCycleHeroMark";
 import styles from "./Home.module.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -39,18 +40,38 @@ export default function HomeHero() {
 
   return (
     <header className={styles.hero}>
-      <Stagger delay={0} reducedMotion={reducedMotion}>
+      <Stagger
+        delay={0}
+        reducedMotion={reducedMotion}
+        className={styles.heroKicker}
+      >
         <p className={`${styles.kicker} mono`}>TECHNICAL TRUST</p>
       </Stagger>
 
-      <Stagger delay={0.08} reducedMotion={reducedMotion}>
+      <Stagger
+        delay={0.08}
+        reducedMotion={reducedMotion}
+        className={styles.heroHeadline}
+      >
         <h1 className={styles.headline}>
           Trust is the scarcest resource in technology. This is a discipline for
           earning it.
         </h1>
       </Stagger>
 
-      <Stagger delay={0.16} reducedMotion={reducedMotion}>
+      <Stagger
+        delay={0.14}
+        reducedMotion={reducedMotion}
+        className={styles.heroVisual}
+      >
+        <PrecisionCycleHeroMark reducedMotion={Boolean(reducedMotion)} />
+      </Stagger>
+
+      <Stagger
+        delay={0.16}
+        reducedMotion={reducedMotion}
+        className={styles.heroStandfirst}
+      >
         <div className={styles.standfirst}>
           <p>
             For the people who sit between complex systems and the humans betting
@@ -66,7 +87,11 @@ export default function HomeHero() {
         </div>
       </Stagger>
 
-      <Stagger delay={0.24} reducedMotion={reducedMotion} className={styles.ctas}>
+      <Stagger
+        delay={0.24}
+        reducedMotion={reducedMotion}
+        className={`${styles.ctas} ${styles.heroCtas}`}
+      >
         <Link
           href="/framework"
           className={styles.ctaPrimary}

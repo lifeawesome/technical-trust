@@ -12,7 +12,7 @@ export default function SiteLogo({ href = "/", className }: SiteLogoProps) {
       src="/TechnicalTrustLogo.svg"
       alt="Technical Trust"
       width={32}
-      height={37}
+      height={32}
       className={className}
       priority
     />

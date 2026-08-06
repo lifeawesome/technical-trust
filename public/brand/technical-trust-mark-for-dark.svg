@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Technical Trust</title>
+  <desc id="desc">Four precision-cut segments represent competence, comprehension, candor, and consistency around the Technical Trust framework.</desc>
+  <defs><path id="segment" d="M138 30a98 98 0 0 1 88 88l-32 5a66 66 0 0 0-60-61z"/></defs>
+  <use href="#segment" fill="#F0A11F"/><use href="#segment" transform="rotate(90 128 128)" fill="#E4EBF1"/><use href="#segment" transform="rotate(180 128 128)" fill="#B8791C"/><use href="#segment" transform="rotate(270 128 128)" fill="#96A6B6"/>
+  <path fill="#F0A11F" d="M101 101h22v22h-22zm32 32h22v22h-22z"/><path fill="#D9E2EA" d="M133 101h22v22h-22zm-32 32h22v22h-22z"/>
+</svg>
