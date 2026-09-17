@@ -1,6 +1,6 @@
 # The Technical Trust Canon
 
-**v1.3 — August 5, 2026**
+**v1.4 — September 16, 2026**
 
 This document is the source of truth for Technical Trust: the theorem, the models, the names, the voice, and the standing decisions. Every essay, Pattern, Practice, Field Guide, Chapter, page, and post is checked against this document. When the canon changes, the change is recorded in the amendment log at the bottom — in public terms, on the framework changelog. Nothing here is beyond revision; nothing here is revised silently.
 
@@ -65,7 +65,7 @@ The Pattern/Practice registry for all sixteen cells is in §5.
 
 **Product on this side:** The **Trust Map Diagnostic** — a practitioner self-assessment over the sixteen map cells (Likert items, one per cell). It is a lead magnet and teaching tool: scores surface as a heatmap tied to Pattern/Practice guidance. It measures production (what the SE does on surfaces), not perception (what the buyer checks across the relationship).
 
-**Do not blur products.** The Trust Map Diagnostic lives on the map. The Trust Audit (future) lives on the Four C's. Site copy, naming, and results UI must keep them distinct.
+**Do not blur products.** The Trust Map Diagnostic lives on the map. The Trust Audit (future) lives on the Four C's. The **Technical Trust Demo Sprint** is a Studio *service* (paid technical product storytelling), not an audit and not a diagnostic. Site copy, naming, and results UI must keep all three distinct.
 
 ---
 
@@ -135,6 +135,8 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 **Publication lifecycle:** predicted (ghost on map) → announced (max 2–3 at a time; on `/patterns` as "Named, not yet written") → published. **A Practice lags its Pattern by one step:** ghosted until the Pattern publishes; revealed (linking to the Pattern's anatomy-of-the-fix) on publish; amber with its own link when its Field Guide publishes. Every Friday changes both faces of the map.
 
+**Optional link fields** on editions (Sales Engineering competency, practical artifact, related Lab project, related Studio service, CTA) may be added as they become available. They *link* these formats to Lab and Studio. They do not rename Pattern, Field Guide, Chapter, or Essay, and they do not invent map cells.
+
 ---
 
 ## 7. Naming Laws
@@ -147,9 +149,25 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 ---
 
-## 8. Audience & Positioning
+## 8. Audience, Brand Architecture & Positioning
 
-**Primary:** practitioners — Sales Engineers, Solutions Architects, Developer Advocates, support engineers; anyone who sits between complex systems and the humans betting on them. **Secondary (the mirror reader):** buyers and decision-makers. The homepage leads practitioner-first and acknowledges buyers in exactly one mirror line. The essays may speak buyer-first; they must reference the Four C's, not restate the map rows as if they were the perception model.
+Technical Trust is the parent brand. The public information architecture has three branches. The three intellectual structures (Four C's, map, lifecycle) live in Learn. They are not "Studio methodology."
+
+| Branch | What it is | Canonical home |
+|---|---|---|
+| **Learn** | Newsletter, essays, framework map, Patterns, Trust Map Diagnostic | `/learn` — children: `/newsletter`, `/framework`, `/essays` |
+| **Lab** | Public portfolio and training environment. Work is labeled client, portfolio, or simulated. | `/lab` |
+| **Studio** | Paid technical product storytelling / technical demo content. Primary offer: Technical Trust Demo Sprint. | `/studio` |
+
+"Technical UGC" is a supporting term only. Primary Studio language is technical product storytelling or technical demo content.
+
+**Primary audience:** practitioners — Sales Engineers, Solutions Architects, Developer Advocates, support engineers; anyone who sits between complex systems and the humans betting on them.
+
+**Secondary (the mirror reader):** buyers and decision-makers. The homepage leads practitioner-first and acknowledges buyers in exactly one mirror line. The essays may speak buyer-first; they must reference the Four C's, not restate the map rows as if they were the perception model.
+
+**Commercial audience:** B2B technology companies as Studio clients. They do not become the homepage's primary reader, and they do not collapse into map rows.
+
+The homepage may lead with Lab and Studio CTAs. Framework and Diagnostic remain one click from Learn. About serves the flywheel (who runs the practice), not a hire-me-first resume.
 
 **The models never blur.** The Four C's are what is *perceived across a relationship*. The map rows are what is *performed in a moment*. The Trust Lifecycle is *when* the verdicts accumulate. Content that confuses these is off-canon.
 
@@ -168,9 +186,11 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 ## 10. Infrastructure Canon
 
 - `patterns.ts` is the single source of truth for all Pattern/Practice data; `framework.ts` for grid structure. No duplication, no CMS until there is a second contributor.
+- `branches.ts`, `studio.ts`, and `lab.ts` are the single sources of truth for branch copy, Studio offers, and Lab projects. Pages render from those modules.
 - The homepage renders from data, never hand-written content lists.
+- Top-level navigation: Learn, Lab, Studio, About. Learn children: Newsletter, Framework, Essays. Manifesto lives in the footer. `/patterns` and `/diagnostic` remain live URLs under Learn.
 - Shareable state lives in URLs (`?view=practices`), never local storage.
-- The framework is versioned; every structural change gets a changelog entry.
+- The framework is versioned; every structural change gets a changelog entry. Brand-architecture changes are recorded in this amendment log; they do not require a map changelog unless the grid itself changes.
 - Canonical edition domain: `newsletter.technicaltrust.org`.
 - Site: Next.js (App Router) + TypeScript + Tailwind + Framer Motion on Vercel. Design system: navy `#1B2A4A`, gold `#E0A030`, off-white `#F5F7FA`; Instrument Sans + Geist Mono; "woven certainty."
 
@@ -179,7 +199,8 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 ## 11. What Technical Trust Is NOT
 
 - Not finished. The map ships incomplete on purpose; the version number is a feature.
-- Not a resume site. The work is the evidence.
+- Not a resume site. Lab evidence logs and labeled portfolio work are in-bounds. Resume-primary / hire-me-first positioning is out. About serves the flywheel; the work is the evidence.
+- Not an audit mill. The Demo Sprint is a Studio service. The Trust Map Diagnostic is a practitioner self-assessment. The Trust Audit remains a future Four C's product. Do not use "audit" or "diagnostic" language for paid demo packages.
 - Not about winning arguments or sounding smart.
 - Not a checklist. Consistency is the law: trust accumulates.
 
@@ -189,6 +210,7 @@ Every cell holds a Pattern (the failure) and its mirror Practice (the move):
 
 | Version | Date | Amendment |
 |---|---|---|
+| v1.4 | 2026-09-16 | Brand architecture. Public IA is Learn / Lab / Studio; the three intellectual structures remain in Learn and are not Studio methodology. Audiences: practitioners (primary), buyer mirror readers (secondary), B2B Studio clients (commercial — not the homepage's primary reader). Products: Demo Sprint named as a Studio service, kept distinct from Trust Map Diagnostic and future Trust Audit. Homepage may lead with Lab/Studio CTAs; Framework and Diagnostic stay one click from Learn. §11: Lab evidence and labeled portfolio work are in-bounds; resume-primary positioning is out. Optional edition link fields (competency, artifact, related Lab/Studio) may attach to existing formats without renaming them. Map grid unchanged — no framework changelog row. |
 | v1.3 | 2026-08-05 | Named products on each side of the table. Trust Map Diagnostic = practitioner self-assessment on the production map (lead magnet; heatmap → Pattern/Practice). Trust Audit remains the future Four C's perception product for teams/managers. §2 and §3 updated so the two never blur in copy or UI. |
 | v1.2 | 2026-07-27 | Consistency has no surface. Elevated Essay #3's structural claim into the constitution: Consistency is a record of behavior, not a behavior; three pillar checks live on the map, the fourth lives only on the clock. Tightens §2 (accumulation law) and §4 law 4 so the canon and *Trust Has a Map and a Clock* agree. Map columns unchanged. |
 | v1.1 | 2026-07-27 | The Lifecycle Ruling. Resolved the open tension between Essay #1's deal-stage lifecycle (discovery → architecture → adoption) and the framework map's interaction surfaces (Discovery, Demo, Docs, Support). Ruling: the lifecycle is canonized as a third structure — the time dimension — with binding relationship laws (stages are when / surfaces are where; surfaces recur across stages; Discovery collision resolved by register; Consistency located on the lifecycle axis; asymmetry law). Essay #1 requires no revision. Public expression ships as Essay #3. |

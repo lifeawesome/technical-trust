@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dan Davidson — I Build Technical Trust";
+export const alt = "Dan Davidson — Technical Trust";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -37,7 +37,7 @@ export default function Image() {
           Dan Davidson
         </h1>
         <p style={{ fontSize: 36, color: "#cbd5e1", marginTop: 16 }}>
-          I build technical trust.
+          Who runs the practice.
         </p>
       </div>
     ),

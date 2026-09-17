@@ -15,7 +15,9 @@ Full canon: docs/CANON.md — read it before any content, naming, data-model, or
 - Shorter bridge (lifecycle not in play): "Buyers are checking for competence, comprehension, candor, and consistency. The map is where the checks happen."
 - Competence is the precondition the map assumes. Never place it on the grid.
 - Consistency has no surface — it is a *record* of behavior, not a behavior. Three pillar checks (competence, comprehension, candor) can be failed at a surface; Consistency can only be read off the clock. Never place Consistency on the grid.
-- Products: Trust Map Diagnostic = map self-assessment (practitioner lead magnet). Trust Audit = future Four C's product for teams/managers. Never blur the two in copy or UI.
+- Products: Trust Map Diagnostic = map self-assessment (practitioner lead magnet). Trust Audit = future Four C's product for teams/managers. Technical Trust Demo Sprint = Studio service (paid technical product storytelling). Never blur these in copy or UI. Never call a demo package an audit or a diagnostic.
+- Brand architecture: Learn / Lab / Studio is the public IA. The three structures live in Learn; they are not Studio methodology.
+- Audiences: practitioners (primary); buyer mirror readers (secondary, one homepage mirror line); B2B Studio clients (commercial — not the homepage's primary reader, not map rows).
 - Asymmetry law: trust is accumulated on the clock and forfeited on the map.
 
 ## Register: "Discovery" vs "the discovery stage"
@@ -30,10 +32,14 @@ Full canon: docs/CANON.md — read it before any content, naming, data-model, or
 
 ## Data laws.
 - `lib/patterns.ts` is the single source of truth for Pattern/Practice data; `lib/framework.ts` for grid structure. Never duplicate this data in components, pages, or copy.
+- `lib/branches.ts`, `lib/studio.ts`, and `lib/lab.ts` are the SSOT for branch copy, Studio offers, and Lab projects.
 - Kit may hydrate publish fields (status, readUrl, date) by matching edition titles to existing Pattern names — it must never invent names or cells. See `lib/pattern-hydration.ts`.
+- Optional edition link fields (competency, artifact, related Lab, related Studio) may attach to existing formats. They must never invent Pattern names or cells.
 - Pages render from data, never hand-written content lists (the homepage staleness rule).
 - Shareable state lives in URLs, never localStorage.
 - Canonical edition domain: newsletter.technicaltrust.org.
+- Top-level nav: Learn, Lab, Studio, About. Learn children: Newsletter, Framework, Essays. Manifesto lives in the footer. `/patterns` and `/diagnostic` remain live URLs.
+- About serves the flywheel (who runs the practice). Lab evidence and labeled portfolio work are in-bounds. Resume-primary / hire-me-first positioning is out.
 
 ## Voice.
 - Framing copy uses manifesto cadence: short declarative lines, one idea per line.

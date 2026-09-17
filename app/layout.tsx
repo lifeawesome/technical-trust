@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Technical Trust",
   },
   description:
-    "Trust is the scarcest resource in technology. A living framework of named failures and their counter-moves.",
+    "A Sales Engineering practice and media platform — clearer technical conversations, more trustworthy demos, better buying decisions.",
 };
 
 export default function RootLayout({

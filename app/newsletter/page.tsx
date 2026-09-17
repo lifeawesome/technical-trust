@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import TrackedCtaLink from "@/components/TrackedCtaLink";
 import styles from "@/components/newsletter/NewsletterArchive.module.css";
+import { newsletterCopy } from "@/lib/branches";
 import { formatEssayDate } from "@/lib/essays";
 import { getNewsletterIssues } from "@/lib/kit-broadcasts";
 
 export const metadata: Metadata = {
   title: "Newsletter",
-  description:
-    "Archive of Technical Trust newsletter issues — chapters and field notes as they publish.",
+  description: newsletterCopy.lede,
 };
 
 export default async function NewsletterPage() {
@@ -17,12 +17,8 @@ export default async function NewsletterPage() {
     <div className={styles.page}>
       <div className={styles.intro}>
         <div className="eyebrow mono">NEWSLETTER</div>
-        <h1 className={styles.heading}>Chapters as they publish</h1>
-        <p className={styles.lede}>
-          Email editions of Technical Trust — practical guides for evaluating
-          vendors, sitting through demos, and making confident technology
-          decisions.
-        </p>
+        <h1 className={styles.heading}>{newsletterCopy.heading}</h1>
+        <p className={styles.lede}>{newsletterCopy.lede}</p>
       </div>
 
       {issues.length > 0 ? (
@@ -57,7 +53,7 @@ export default async function NewsletterPage() {
 
       <div className={styles.subscribe}>
         <p className={styles.subscribeText}>
-          Get new chapters in your inbox as they publish.
+          {newsletterCopy.subscribe}
         </p>
         <TrackedCtaLink
           href="/#subscribe"

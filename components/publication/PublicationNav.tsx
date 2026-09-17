@@ -13,6 +13,10 @@ import {
 import styles from "./PublicationNav.module.css";
 
 export type PublicationNavActive =
+  | "learn"
+  | "lab"
+  | "studio"
+  | "about"
   | "essays"
   | "newsletter"
   | "manifesto"
@@ -24,39 +28,44 @@ type PublicationNavProps = {
   activeNav?: PublicationNavActive;
 };
 
-const FRAMEWORK_LINKS = [
-  { href: "/framework", label: "Map", id: "framework" as const },
-  { href: "/patterns", label: "Patterns", id: "patterns" as const },
-  { href: "/diagnostic", label: "Diagnostic", id: "diagnostic" as const },
-];
-
-const WRITING_LINKS = [
-  { href: "/essays", label: "Essays", id: "essays" as const },
-  { href: "/manifesto", label: "Manifesto", id: "manifesto" as const },
+const LEARN_LINKS = [
+  { href: "/learn", label: "The discipline", id: "learn" as const },
   { href: "/newsletter", label: "Newsletter", id: "newsletter" as const },
+  { href: "/framework", label: "Framework", id: "framework" as const },
+  { href: "/essays", label: "Essays", id: "essays" as const },
 ];
 
-function isFrameworkActive(activeNav?: PublicationNavActive) {
-  return (
-    activeNav === "framework" ||
-    activeNav === "patterns" ||
-    activeNav === "diagnostic"
-  );
-}
+const LEARN_ACTIVE: PublicationNavActive[] = [
+  "learn",
+  "essays",
+  "newsletter",
+  "manifesto",
+  "framework",
+  "patterns",
+  "diagnostic",
+];
 
-function isWritingActive(activeNav?: PublicationNavActive) {
-  return (
-    activeNav === "essays" ||
-    activeNav === "manifesto" ||
-    activeNav === "newsletter"
-  );
+function isLearnActive(activeNav?: PublicationNavActive) {
+  return activeNav !== undefined && LEARN_ACTIVE.includes(activeNav);
 }
 
 export default function PublicationNav({ activeNav }: PublicationNavProps) {
   const pathname = usePathname();
-  const aboutActive = pathname === "/about";
-  const frameworkActive = isFrameworkActive(activeNav);
-  const writingActive = isWritingActive(activeNav);
+  const resolvedActive =
+    activeNav ??
+    (pathname === "/about"
+      ? "about"
+      : pathname === "/lab"
+        ? "lab"
+        : pathname === "/studio"
+          ? "studio"
+          : pathname === "/learn"
+            ? "learn"
+            : undefined);
+  const learnActive = isLearnActive(resolvedActive);
+  const labActive = resolvedActive === "lab";
+  const studioActive = resolvedActive === "studio";
+  const aboutActive = resolvedActive === "about";
 
   const [open, setOpen] = useState(false);
   const drawerId = useId();
@@ -127,45 +136,22 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
 
   return (
     <>
-      <nav className={styles.desktopNav} aria-label="Publication">
+      <nav className={styles.desktopNav} aria-label="Site">
         <div className={styles.navGroup}>
           <button
             type="button"
             className={styles.navParent}
-            data-active={frameworkActive || undefined}
+            data-active={learnActive || undefined}
             aria-haspopup="true"
           >
-            Framework
+            Learn
           </button>
-          <ul className={styles.submenu} aria-label="Framework">
-            {FRAMEWORK_LINKS.map((item) => (
+          <ul className={styles.submenu} aria-label="Learn">
+            {LEARN_LINKS.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  data-active={activeNav === item.id || undefined}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={styles.navGroup}>
-          <button
-            type="button"
-            className={styles.navParent}
-            data-active={writingActive || undefined}
-            aria-haspopup="true"
-          >
-            Writing
-          </button>
-          <ul className={styles.submenu} aria-label="Writing">
-            {WRITING_LINKS.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  data-active={activeNav === item.id || undefined}
+                  data-active={resolvedActive === item.id || undefined}
                 >
                   {item.label}
                 </Link>
@@ -175,11 +161,25 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
         </div>
 
         <Link
+          href="/lab"
+          className={styles.topLink}
+          data-active={labActive || undefined}
+        >
+          Lab
+        </Link>
+        <Link
+          href="/studio"
+          className={styles.topLink}
+          data-active={studioActive || undefined}
+        >
+          Studio
+        </Link>
+        <Link
           href="/about"
-          className={styles.aboutLink}
+          className={styles.topLink}
           data-active={aboutActive || undefined}
         >
-          About Dan
+          About
         </Link>
       </nav>
 
@@ -217,7 +217,7 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
         data-open={open || undefined}
         role="dialog"
         aria-modal="true"
-        aria-label="Publication menu"
+        aria-label="Site menu"
         onKeyDown={onDrawerKeyDown}
         {...(!open ? { inert: true } : {})}
       >
@@ -234,42 +234,20 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
           </button>
         </div>
 
-        <nav className={styles.drawerNav} aria-label="Publication">
+        <nav className={styles.drawerNav} aria-label="Site">
           <section
             className={styles.drawerSection}
-            aria-labelledby="drawer-framework"
+            aria-labelledby="drawer-learn"
           >
-            <h2 id="drawer-framework" className={`${styles.sectionLabel} mono`}>
-              Framework
+            <h2 id="drawer-learn" className={`${styles.sectionLabel} mono`}>
+              Learn
             </h2>
             <ul className={styles.drawerList}>
-              {FRAMEWORK_LINKS.map((item) => (
+              {LEARN_LINKS.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    data-active={activeNav === item.id || undefined}
-                    onClick={close}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section
-            className={styles.drawerSection}
-            aria-labelledby="drawer-writing"
-          >
-            <h2 id="drawer-writing" className={`${styles.sectionLabel} mono`}>
-              Writing
-            </h2>
-            <ul className={styles.drawerList}>
-              {WRITING_LINKS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    data-active={activeNav === item.id || undefined}
+                    data-active={resolvedActive === item.id || undefined}
                     onClick={close}
                   >
                     {item.label}
@@ -281,11 +259,25 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
 
           <div className={styles.drawerAbout}>
             <Link
+              href="/lab"
+              data-active={labActive || undefined}
+              onClick={close}
+            >
+              Lab
+            </Link>
+            <Link
+              href="/studio"
+              data-active={studioActive || undefined}
+              onClick={close}
+            >
+              Studio
+            </Link>
+            <Link
               href="/about"
               data-active={aboutActive || undefined}
               onClick={close}
             >
-              About Dan
+              About
             </Link>
           </div>
         </nav>

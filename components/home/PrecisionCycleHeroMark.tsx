@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import styles from "./Home.module.css";
 
 const segmentPath =
@@ -41,10 +41,13 @@ const cells = [
 ] as const;
 
 export default function PrecisionCycleHeroMark({
-  reducedMotion,
+  reducedMotion: reducedMotionProp,
 }: {
-  reducedMotion: boolean;
+  reducedMotion?: boolean;
 }) {
+  const prefersReduced = useReducedMotion();
+  const reducedMotion = reducedMotionProp ?? Boolean(prefersReduced);
+
   return (
     <div className={styles.cycleStage} aria-hidden="true">
       <div className={styles.cycleGrid} />

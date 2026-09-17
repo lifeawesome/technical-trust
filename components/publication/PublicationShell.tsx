@@ -34,10 +34,11 @@ export default function PublicationShell({
       <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
-        Written by{" "}
-        <Link href="/about">Dan Davidson</Link>
+        <Link href="/about">About</Link>
         {" · "}
         <Link href="/manifesto">Manifesto</Link>
+        {" · "}
+        <Link href="/studio">Studio</Link>
       </footer>
     </div>
   );

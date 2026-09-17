@@ -117,6 +117,15 @@
   color: var(--text-primary);
 }
 
+.topLink {
+  color: var(--text-body);
+}
+
+.topLink:hover,
+.topLink[data-active="true"] {
+  color: var(--text-primary);
+}
+
 /* —— Mobile hamburger —— */
 
 .menuButton {
@@ -321,6 +330,9 @@
 }
 
 .drawerAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   padding-top: 8px;
   border-top: 1px solid rgba(148, 163, 184, 0.12);
 }

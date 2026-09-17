@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { trackCtaClick } from "@/lib/analytics";
-import PrecisionCycleHeroMark from "./PrecisionCycleHeroMark";
-import styles from "./Home.module.css";
+import { home } from "@/lib/branches";
+import styles from "@/components/home/Home.module.css";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -45,7 +45,7 @@ export default function HomeHero() {
         reducedMotion={reducedMotion}
         className={styles.heroKicker}
       >
-        <p className={`${styles.kicker} mono`}>TECHNICAL TRUST</p>
+        <p className={`${styles.kicker} mono`}>{home.hero.kicker}</p>
       </Stagger>
 
       <Stagger
@@ -53,72 +53,53 @@ export default function HomeHero() {
         reducedMotion={reducedMotion}
         className={styles.heroHeadline}
       >
-        <h1 className={styles.headline}>
-          Trust is the scarcest resource in technology. This is a discipline for
-          earning it.
-        </h1>
+        <h1 className={styles.headline}>{home.hero.headline}</h1>
       </Stagger>
 
       <Stagger
         delay={0.14}
         reducedMotion={reducedMotion}
-        className={styles.heroVisual}
-      >
-        <PrecisionCycleHeroMark reducedMotion={Boolean(reducedMotion)} />
-      </Stagger>
-
-      <Stagger
-        delay={0.16}
-        reducedMotion={reducedMotion}
         className={styles.heroStandfirst}
       >
+        <p className={styles.supporting}>{home.hero.supporting}</p>
         <div className={styles.standfirst}>
-          <p>
-            For the people who sit between complex systems and the humans betting
-            on them — sales engineers, solutions architects, advocates, support.
-          </p>
-          <p>
-            Anyone whose job is turning complexity into confident decisions.
-          </p>
-          <p>
-            And if you&apos;re the one making the decision: this map shows you
-            exactly what to watch for.
-          </p>
+          <p>{home.hero.practitioner}</p>
+          <p>{home.hero.mirror}</p>
         </div>
       </Stagger>
 
       <Stagger
         delay={0.24}
         reducedMotion={reducedMotion}
-        className={`${styles.ctas} ${styles.heroCtas}`}
+        className={styles.ctas}
       >
         <Link
-          href="/framework"
+          href={home.hero.primaryCta.href}
           className={styles.ctaPrimary}
           onClick={() =>
             trackCtaClick({
-              ctaId: "home_explore_framework",
-              ctaText: "Explore the framework",
+              ctaId: "home_explore_lab",
+              ctaText: home.hero.primaryCta.label,
               location: "homepage_hero",
-              destination: "/framework",
+              destination: home.hero.primaryCta.href,
             })
           }
         >
-          Explore the framework →
+          {home.hero.primaryCta.label} →
         </Link>
         <Link
-          href="/diagnostic"
+          href={home.hero.secondaryCta.href}
           className={styles.ctaSecondary}
           onClick={() =>
             trackCtaClick({
-              ctaId: "home_trust_map_diagnostic",
-              ctaText: "Take the Trust Map Diagnostic",
+              ctaId: "home_work_with_studio",
+              ctaText: home.hero.secondaryCta.label,
               location: "homepage_hero",
-              destination: "/diagnostic",
+              destination: home.hero.secondaryCta.href,
             })
           }
         >
-          Take the Trust Map Diagnostic →
+          {home.hero.secondaryCta.label} →
         </Link>
       </Stagger>
     </header>

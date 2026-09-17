@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EmailCapture from "@/components/coming-soon/EmailCapture";
-import HomeFrameworkEmbed from "@/components/home/HomeFrameworkEmbed";
 import HomeHero from "@/components/home/HomeHero";
 import PublicationShell from "@/components/publication/PublicationShell";
+import TrackedCtaLink from "@/components/TrackedCtaLink";
 import { coordinateLabel } from "@/lib/framework";
 import { getHydratedPatterns } from "@/lib/pattern-hydration";
 import {
@@ -11,11 +11,13 @@ import {
   getPublishedPatterns,
   isExternalUrl,
 } from "@/lib/patterns";
+import { branches, home } from "@/lib/branches";
+import { getFeaturedLabProjects, lab } from "@/lib/lab";
+import { studio } from "@/lib/studio";
 import styles from "@/components/home/Home.module.css";
 
-const title = "Technical Trust — A discipline for earning trust in technology";
-const description =
-  "Trust is the scarcest resource in technology. A living framework of named failures and their counter-moves — for sales engineers, solutions architects, and everyone who helps people make confident decisions about complex systems.";
+const title = "Technical Trust — Clearer technical conversations";
+const description = home.hero.supporting;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -36,6 +38,7 @@ export default async function Home() {
   const patterns = await getHydratedPatterns();
   const latest = getPublishedPatterns(patterns).slice(0, 2);
   const newest = latest[0];
+  const featuredLab = getFeaturedLabProjects();
 
   if (!newest?.readUrl) {
     throw new Error("Homepage requires at least one published Pattern with readUrl");
@@ -46,7 +49,41 @@ export default async function Home() {
       <div className={styles.page}>
         <HomeHero />
 
-        <HomeFrameworkEmbed patterns={patterns} />
+        <section
+          className={styles.problemSection}
+          aria-labelledby="problem-heading"
+        >
+          <h2 id="problem-heading" className={styles.sectionHeading}>
+            {home.problem.heading}
+          </h2>
+          <div className={styles.problemLines}>
+            {home.problem.lines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className={styles.branchesSection}
+          aria-labelledby="branches-heading"
+        >
+          <h2 id="branches-heading" className={styles.sectionHeading}>
+            {home.branchesHeading}
+          </h2>
+          <div className={styles.branchGrid}>
+            {branches.map((branch) => (
+              <Link
+                key={branch.id}
+                href={branch.href}
+                className={styles.branchCard}
+              >
+                <p className={`${styles.branchKicker} mono`}>{branch.kicker}</p>
+                <h3 className={styles.branchLine}>{branch.line}</h3>
+                <p className={styles.branchBody}>{branch.body}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <section
           className={styles.patternsSection}
@@ -112,26 +149,83 @@ export default async function Home() {
           </Link>
         </section>
 
-        <section
-          className={styles.manifestoSection}
-          aria-labelledby="manifesto-excerpt-heading"
-        >
-          <h2 id="manifesto-excerpt-heading" className={styles.srOnly}>
-            From the manifesto
+        <section className={styles.labSection} aria-labelledby="lab-heading">
+          <h2 id="lab-heading" className={styles.sectionHeading}>
+            Featured Lab projects
           </h2>
-          <div className={styles.manifestoLines}>
-            <p>Information is no longer scarce.</p>
-            <p>Attention, judgment, and trust are.</p>
-          </div>
-          <p className={styles.manifestoFollow}>
-            The manifesto is the commitment behind this work — why trust is the
-            scarcest resource in technology, and why the people who help others
-            make confident decisions will matter more than those who simply have
-            answers.
+          {featuredLab.length > 0 ? (
+            <ul className={styles.patternList}>
+              {featuredLab.map((project) => (
+                <li key={project.slug} className={styles.patternEntry}>
+                  <h3 className={styles.patternName}>{project.name}</h3>
+                  <p className={styles.patternDefinition}>{project.problem}</p>
+                  <Link href={`/lab#${project.slug}`} className={styles.readLink}>
+                    View project →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className={styles.emptyPanel}>
+              <p className={styles.emptyTitle}>{lab.empty.heading}</p>
+              <p className={styles.emptyText}>{lab.empty.body}</p>
+            </div>
+          )}
+          <p className={styles.sectionFollow}>
+            <Link href="/lab" className={styles.allPatterns}>
+              Explore the Lab →
+            </Link>
           </p>
-          <Link href="/manifesto" className={styles.manifestoLink}>
-            Read the manifesto →
+        </section>
+
+        <section
+          className={styles.studioSection}
+          aria-labelledby="studio-heading"
+        >
+          <h2 id="studio-heading" className={styles.sectionHeading}>
+            {studio.name}
+          </h2>
+          <p className={styles.offerName}>{studio.primaryOffer.name}</p>
+          <p className={styles.bodyText}>{studio.primaryOffer.pitch}</p>
+          <ul className={styles.deliverableList}>
+            {studio.primaryOffer.deliverables.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <TrackedCtaLink
+            href="/studio"
+            className={styles.ctaPrimary}
+            ctaId="home_studio_offer"
+            ctaText="See the Demo Sprint"
+            location="homepage_studio"
+          >
+            See the Demo Sprint →
+          </TrackedCtaLink>
+        </section>
+
+        <section
+          className={styles.credibilitySection}
+          aria-labelledby="credibility-heading"
+        >
+          <h2 id="credibility-heading" className={styles.sectionHeading}>
+            {home.credibility.heading}
+          </h2>
+          <p className={styles.bodyText}>{home.credibility.body}</p>
+          <Link href={home.credibility.cta.href} className={styles.allPatterns}>
+            {home.credibility.cta.label} →
           </Link>
+        </section>
+
+        <section
+          className={styles.evidenceSection}
+          aria-labelledby="evidence-heading"
+        >
+          <h2 id="evidence-heading" className={styles.sectionHeading}>
+            {home.evidence.heading}
+          </h2>
+          <div className={styles.emptyPanel}>
+            <p className={styles.emptyText}>{home.evidence.empty}</p>
+          </div>
         </section>
 
         <section
@@ -140,12 +234,29 @@ export default async function Home() {
           aria-labelledby="subscribe-heading"
         >
           <h2 id="subscribe-heading" className={styles.subscribeTitle}>
-            Technical Trust Weekly
+            {home.subscribe.heading}
           </h2>
-          <p className={styles.subscribeLede}>
-            One named failure and its counter-move. Every Friday.
-          </p>
+          <p className={styles.subscribeLede}>{home.subscribe.lede}</p>
           <EmailCapture />
+        </section>
+
+        <section
+          className={styles.closingSection}
+          aria-labelledby="studio-contact-heading"
+        >
+          <h2 id="studio-contact-heading" className={styles.subscribeTitle}>
+            {home.studioContact.heading}
+          </h2>
+          <p className={styles.subscribeLede}>{home.studioContact.lede}</p>
+          <TrackedCtaLink
+            href={home.studioContact.cta.href}
+            className={styles.ctaPrimary}
+            ctaId="home_studio_contact"
+            ctaText={home.studioContact.cta.label}
+            location="homepage_closing"
+          >
+            {home.studioContact.cta.label} →
+          </TrackedCtaLink>
         </section>
       </div>
     </PublicationShell>
