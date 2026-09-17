@@ -59,7 +59,7 @@
   border: none;
   border-radius: 10px;
   background: var(--accent);
-  color: #1a1206;
+  color: var(--accent-ink);
   font-family: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -68,7 +68,7 @@
 }
 
 .primaryCta:hover:not(:disabled) {
-  background: #fbbf24;
+  background: var(--accent-hover);
 }
 
 .primaryCta:disabled {
@@ -100,7 +100,7 @@
 .progressTrack {
   height: 4px;
   border-radius: 999px;
-  background: rgba(148, 163, 184, 0.16);
+  background: var(--fill-muted);
   overflow: hidden;
 }
 
@@ -141,8 +141,8 @@
   width: 100%;
   padding: 14px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid var(--border-strong);
+  background: var(--panel-bg);
   color: var(--text-body);
   font-family: inherit;
   font-size: 14px;
@@ -155,13 +155,13 @@
 }
 
 .likertOption:hover {
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: var(--accent-border);
   color: var(--text-primary);
 }
 
 .likertOptionSelected {
   border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-  background: color-mix(in srgb, var(--accent) 12%, rgba(15, 23, 42, 0.55));
+  background: var(--likert-selected);
   color: var(--text-primary);
 }
 
@@ -172,7 +172,7 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: rgba(148, 163, 184, 0.12);
+  background: var(--fill-muted);
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
@@ -181,7 +181,7 @@
 
 .likertOptionSelected .likertValue {
   background: color-mix(in srgb, var(--accent) 28%, transparent);
-  color: #1a1206;
+  color: var(--accent-ink);
 }
 
 .navRow {
@@ -196,7 +196,7 @@
   align-items: center;
   padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  border: 1px solid var(--border-strong);
   background: transparent;
   color: var(--text-body);
   font-family: inherit;
@@ -207,7 +207,7 @@
 
 .ghostButton:hover:not(:disabled) {
   color: var(--text-primary);
-  border-color: rgba(148, 163, 184, 0.4);
+  border-color: var(--border-dashed);
 }
 
 .ghostButton:disabled {
@@ -218,7 +218,7 @@
 .error {
   margin: 16px 0 0;
   font-size: 14px;
-  color: #fca5a5;
+  color: var(--text-danger);
 }
 
 /* Gate */
@@ -226,12 +226,8 @@
   margin-top: 8px;
   padding: clamp(24px, 4vw, 36px);
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  background: linear-gradient(
-    160deg,
-    rgba(30, 41, 59, 0.55),
-    rgba(11, 18, 32, 0.72)
-  );
+  border: 1px solid var(--border-strong);
+  background: var(--surface-gradient-strong);
 }
 
 .teaserLabel {
@@ -269,8 +265,8 @@
   min-width: 0;
   padding: 13px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  background: rgba(11, 18, 32, 0.65);
+  border: 1px solid var(--border-strong);
+  background: var(--input-bg);
   color: var(--text-primary);
   font-family: inherit;
   font-size: 14px;
@@ -355,7 +351,7 @@
   min-height: 72px;
   padding: 10px 6px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  border: 1px solid var(--border);
   text-align: center;
 }
 
@@ -372,17 +368,17 @@
 }
 
 .scoreStrong {
-  background: color-mix(in srgb, var(--accent) 22%, rgba(15, 23, 42, 0.7));
+  background: var(--score-strong);
   border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .scoreModerate {
-  background: rgba(30, 41, 59, 0.75);
+  background: var(--score-moderate);
 }
 
 .scoreWeak {
-  background: rgba(15, 23, 42, 0.55);
-  border-color: rgba(148, 163, 184, 0.1);
+  background: var(--score-weak);
+  border-color: var(--border);
   opacity: 0.9;
 }
 
@@ -394,8 +390,8 @@
 .card {
   padding: 20px 22px;
   border-radius: 14px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-strong);
+  background: var(--panel-bg);
 }
 
 .cardMeta {
@@ -444,8 +440,8 @@
 .averageItem {
   padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
 }
 
 .averageLabel {

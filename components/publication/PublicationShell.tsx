@@ -1,6 +1,7 @@
 import Link from "next/link";
 import BackgroundMesh from "@/components/BackgroundMesh";
 import SiteLogo from "@/components/SiteLogo";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 import PublicationNav, {
   type PublicationNavActive,
 } from "@/components/publication/PublicationNav";
@@ -28,7 +29,10 @@ export default function PublicationShell({
             <span className={styles.brandName}>Technical Trust</span>
           </Link>
         </div>
-        <PublicationNav activeNav={activeNav} />
+        <div className={styles.headerActions}>
+          <PublicationNav activeNav={activeNav} />
+          <ThemeToggle className={styles.themeToggle} />
+        </div>
       </header>
 
       <main className={styles.main}>{children}</main>

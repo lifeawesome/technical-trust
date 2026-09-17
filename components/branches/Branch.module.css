@@ -70,13 +70,13 @@
   padding: 22px 24px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.45), rgba(15, 23, 42, 0.25));
+  background: var(--surface-gradient);
   color: inherit;
 }
 
 a.card:hover {
   color: inherit;
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: var(--accent-border);
 }
 
 .cardKicker {
@@ -113,7 +113,7 @@ a.card:hover {
 
 .listItem {
   padding: 12px 0;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid var(--border);
   font-size: 1.05rem;
   line-height: 1.5;
   color: var(--text-body);
@@ -133,7 +133,7 @@ a.card:hover {
 .empty {
   padding: 28px 24px;
   border-radius: 14px;
-  border: 1px dashed rgba(148, 163, 184, 0.25);
+  border: 1px dashed var(--border-dashed);
 }
 
 .emptyTitle {
@@ -171,14 +171,14 @@ a.card:hover {
   padding: 11px 18px;
   border-radius: 8px;
   background: var(--accent);
-  color: #1a1206;
+  color: var(--accent-ink);
   font-size: 14px;
   font-weight: 600;
 }
 
 .ctaPrimary:hover {
-  background: #fbbf24;
-  color: #1a1206;
+  background: var(--accent-hover);
+  color: var(--accent-ink);
 }
 
 .ctaSecondary {

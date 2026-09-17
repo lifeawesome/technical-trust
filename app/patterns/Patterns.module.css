@@ -50,7 +50,7 @@
 .announcedSection {
   margin-bottom: clamp(48px, 8vw, 72px);
   padding-top: clamp(32px, 5vw, 44px);
-  border-top: 1px dashed rgba(148, 163, 184, 0.28);
+  border-top: 1px dashed var(--border-dashed);
 }
 
 .announcedHeading {
@@ -58,14 +58,14 @@
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: #94a3b8;
+  color: var(--text-body);
 }
 
 .subscribe {
   margin-bottom: clamp(36px, 5vw, 48px);
   padding: 28px 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.12);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .sectionHeading {
@@ -83,7 +83,7 @@
 }
 
 .subscribeLink:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .frameworkLink {
@@ -99,7 +99,7 @@
 }
 
 .frameworkLink a:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .srOnly {

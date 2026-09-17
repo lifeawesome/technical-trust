@@ -6,7 +6,7 @@
 
 .published {
   padding: 0 0 clamp(40px, 6vw, 56px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid var(--border);
 }
 
 .published:last-child {
@@ -24,13 +24,13 @@
 
 @keyframes arrivalGlow {
   0% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
   }
   25% {
-    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 40%, transparent);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
   }
 }
 
@@ -61,7 +61,7 @@
 }
 
 .coords:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .comingTag {
@@ -99,7 +99,7 @@
 }
 
 .practiceLink:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .readLink {
@@ -110,7 +110,7 @@
 }
 
 .readLink:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .announcedName {
@@ -119,7 +119,7 @@
   font-weight: 700;
   letter-spacing: -0.015em;
   line-height: 1.25;
-  color: #cbd5e1;
+  color: var(--text-body);
 }
 
 .teaser {
@@ -127,5 +127,5 @@
   max-width: 36rem;
   font-size: 14.5px;
   line-height: 1.55;
-  color: #94a3b8;
+  color: var(--text-muted);
 }

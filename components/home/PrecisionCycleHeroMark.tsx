@@ -10,34 +10,34 @@ const segments = [
   {
     id: "competence",
     label: "Competence",
-    color: "#f0a11f",
+    color: "var(--mark-gold)",
     rotation: 0,
   },
   {
     id: "comprehension",
     label: "Comprehension",
-    color: "#e4ebf1",
+    color: "var(--mark-navy)",
     rotation: 90,
   },
   {
     id: "candor",
     label: "Candor",
-    color: "#b8791c",
+    color: "var(--mark-gold-deep)",
     rotation: 180,
   },
   {
     id: "consistency",
     label: "Consistency",
-    color: "#96a6b6",
+    color: "var(--mark-slate)",
     rotation: 270,
   },
 ] as const;
 
 const cells = [
-  { x: 101, y: 101, color: "#f0a11f" },
-  { x: 133, y: 101, color: "#d9e2ea" },
-  { x: 101, y: 133, color: "#d9e2ea" },
-  { x: 133, y: 133, color: "#f0a11f" },
+  { x: 101, y: 101, color: "var(--mark-gold)" },
+  { x: 133, y: 101, color: "var(--mark-cell-alt)" },
+  { x: 101, y: 133, color: "var(--mark-cell-alt)" },
+  { x: 133, y: 133, color: "var(--mark-gold)" },
 ] as const;
 
 export default function PrecisionCycleHeroMark({
@@ -65,7 +65,7 @@ export default function PrecisionCycleHeroMark({
           cy="128"
           r="115"
           fill="none"
-          stroke="rgba(150, 166, 182, 0.16)"
+          stroke="var(--mark-ring)"
           strokeWidth="1"
         />
         <circle
@@ -73,13 +73,13 @@ export default function PrecisionCycleHeroMark({
           cy="128"
           r="80"
           fill="none"
-          stroke="rgba(228, 235, 241, 0.1)"
+          stroke="var(--mark-ring-inner)"
           strokeWidth="1"
         />
         <path
           d="M128 9v38M247 128h-38M128 247v-38M9 128h38"
           fill="none"
-          stroke="rgba(150, 166, 182, 0.14)"
+          stroke="var(--mark-ring)"
           strokeWidth="1"
           strokeDasharray="2 5"
         />
@@ -89,7 +89,7 @@ export default function PrecisionCycleHeroMark({
           cy="128"
           r="115"
           fill="none"
-          stroke="rgba(240, 161, 31, 0.5)"
+          stroke="var(--mark-orbit)"
           strokeWidth="1.5"
           strokeDasharray="2 18"
           style={{ transformOrigin: "128px 128px" }}
@@ -105,7 +105,7 @@ export default function PrecisionCycleHeroMark({
           cy="128"
           r="105"
           fill="none"
-          stroke="rgba(255, 255, 255, 0.6)"
+          stroke="var(--mark-tick)"
           strokeWidth="2"
           strokeDasharray="18 642"
           strokeLinecap="square"

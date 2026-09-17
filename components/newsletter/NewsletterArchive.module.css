@@ -36,13 +36,13 @@
   padding: 22px 24px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.45), rgba(15, 23, 42, 0.25));
+  background: var(--surface-gradient);
   color: inherit;
 }
 
 .card:hover {
   color: inherit;
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: var(--accent-border);
 }
 
 .cardTitle {
@@ -68,7 +68,7 @@
 .empty {
   padding: 32px 28px;
   border-radius: 14px;
-  border: 1px dashed rgba(148, 163, 184, 0.25);
+  border: 1px dashed var(--border-dashed);
   text-align: center;
 }
 
@@ -108,5 +108,5 @@
 }
 
 .subscribeLink:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }

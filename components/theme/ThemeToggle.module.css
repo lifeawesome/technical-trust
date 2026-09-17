@@ -1,0 +1,66 @@
+.button,
+.row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-body);
+  cursor: pointer;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.row {
+  gap: 10px;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button:hover,
+.row:hover {
+  color: var(--text-primary);
+  background: var(--fill-muted);
+}
+
+.button:focus-visible,
+.row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sun,
+.moon {
+  line-height: 0;
+}
+
+.moon {
+  display: block;
+}
+
+.sun {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .moon {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .sun {
+  display: block;
+}
+
+.label {
+  color: inherit;
+}

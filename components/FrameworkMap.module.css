@@ -180,33 +180,25 @@
 /* Published: filled slate, gold border */
 .cellPattern,
 .cellChapter {
-  background: linear-gradient(
-    155deg,
-    rgba(30, 41, 59, 0.92) 0%,
-    rgba(15, 23, 42, 0.95) 100%
-  );
-  border: 1px solid rgba(245, 158, 11, 0.55);
+  background: var(--map-cell);
+  border: 1px solid var(--accent-border-strong);
 }
 
 .cellPattern:hover,
 .cellChapter:hover {
-  background: linear-gradient(
-    155deg,
-    rgba(42, 48, 38, 0.95) 0%,
-    rgba(30, 41, 59, 0.98) 100%
-  );
-  border-color: rgba(245, 158, 11, 0.85);
+  background: var(--map-cell-hover);
+  border-color: color-mix(in srgb, var(--accent) 85%, transparent);
   transform: translateY(-2px);
 }
 
 /* Field guide: outlined gold */
 .cellFieldGuide {
   background: transparent;
-  border: 1px solid rgba(245, 158, 11, 0.7);
+  border: 1px solid var(--accent-border-strong);
 }
 
 .cellFieldGuide:hover {
-  background: rgba(245, 158, 11, 0.08);
+  background: var(--accent-soft);
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -214,7 +206,7 @@
 /* Planned: dashed gold, readable muted title (not opacity-faked) */
 .cellPlanned {
   background: transparent;
-  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border: 1px dashed var(--accent-border);
   cursor: default;
 }
 
@@ -223,37 +215,37 @@ a.cellPlanned {
 }
 
 .cellPlanned .cellTitle {
-  color: #cbd5e1;
+  color: var(--text-body);
 }
 
 .cellPlanned .statusTag {
-  color: rgba(245, 158, 11, 0.85);
+  color: color-mix(in srgb, var(--accent) 85%, transparent);
 }
 
 /* Predicted: dashed slate, ghost name — non-interactive */
 .cellPredicted {
   background: transparent;
-  border: 1px dashed rgba(148, 163, 184, 0.22);
+  border: 1px dashed var(--border-strong);
   cursor: default;
 }
 
 .cellPredicted .statusTag {
-  color: #647890;
+  color: var(--text-ghost);
 }
 
 .cellPredicted .cellTitle {
-  color: #647890;
+  color: var(--text-ghost);
   transition: color 150ms ease;
 }
 
 .cellPredicted:hover .cellTitle {
-  color: #7a8ba0;
+  color: var(--text-ghost-hover);
 }
 
 /* Open fallback: quiet dashed slate */
 .cellOpen {
   background: transparent;
-  border: 1px dashed rgba(148, 163, 184, 0.22);
+  border: 1px dashed var(--border-strong);
   cursor: default;
 }
 
@@ -317,7 +309,7 @@ a.cellPlanned {
 .mobilePredictedText {
   font-size: 13px;
   line-height: 1.5;
-  color: #647890;
+  color: var(--text-ghost);
 }
 
 .mobileOpen {
@@ -344,13 +336,9 @@ a.cellPlanned {
 .compactFigureInner {
   margin: 0;
   padding: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  border: 1px solid var(--border-strong);
   border-radius: 6px;
-  background: linear-gradient(
-    155deg,
-    rgba(30, 41, 59, 0.45) 0%,
-    rgba(15, 23, 42, 0.65) 100%
-  );
+  background: var(--map-compact);
 }
 
 .compactFigureGrid {
@@ -395,17 +383,13 @@ a.cellPlanned {
 }
 
 .compactFigureCellFilled {
-  background: linear-gradient(
-    155deg,
-    rgba(30, 41, 59, 0.92) 0%,
-    rgba(15, 23, 42, 0.95) 100%
-  );
-  border: 1px solid rgba(245, 158, 11, 0.55);
+  background: var(--map-cell);
+  border: 1px solid var(--accent-border-strong);
 }
 
 .compactFigureCellGhost {
   background: transparent;
-  border: 1px dashed rgba(148, 163, 184, 0.28);
+  border: 1px dashed var(--border-dashed);
 }
 
 .compactFigureCaption {

@@ -1,7 +1,7 @@
 .page {
   position: relative;
   min-height: 100vh;
-  background: var(--bg);
+  background: transparent;
   display: flex;
   flex-direction: column;
 }
@@ -9,20 +9,41 @@
 .meshWrap {
   position: absolute;
   inset: 0;
-  opacity: 0.35;
+  opacity: var(--mesh-opacity);
   pointer-events: none;
   overflow: hidden;
 }
 
 .header {
-  position: relative;
-  z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 16px clamp(20px, 5vw, 64px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.themeToggle {
+  margin: -8px -8px -8px 0;
+}
+
+@media (min-width: 768px) {
+  .themeToggle {
+    margin-left: 8px;
+  }
 }
 
 .brand {
@@ -68,7 +89,7 @@
   position: relative;
   z-index: 1;
   padding: 24px clamp(20px, 5vw, 64px) 32px;
-  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  border-top: 1px solid var(--border);
   font-size: 13px;
   color: var(--text-muted);
   text-align: center;
@@ -76,4 +97,8 @@
 
 .footer a {
   color: var(--text-body);
+}
+
+.footer a:hover {
+  color: var(--text-primary);
 }

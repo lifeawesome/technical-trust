@@ -66,7 +66,7 @@
   width: 100%;
   height: auto;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  border: 1px solid var(--border);
 }
 
 .featuredSvg {
@@ -74,8 +74,8 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 6px;
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  background: #0b1220;
+  border: 1px solid var(--border);
+  background: var(--art-bg);
   overflow: hidden;
 }
 
@@ -85,7 +85,7 @@
   padding: 4px 9px;
   border-radius: 6px;
   border: 1px solid var(--border);
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--fill-muted);
 }
 
 .article {
@@ -97,7 +97,7 @@
 .prose {
   font-size: 17px;
   line-height: 1.75;
-  color: #cbd5e1;
+  color: var(--text-body);
 }
 
 .prose :global(h2) {
@@ -143,14 +143,14 @@
 .prose :global(blockquote) {
   margin: 1.5em 0;
   padding: 0.2em 0 0.2em 1.1em;
-  border-left: 3px solid rgba(245, 158, 11, 0.55);
+  border-left: 3px solid var(--accent-border-strong);
   color: var(--text-body);
 }
 
 .prose :global(code) {
   font-family: var(--font-jetbrains-mono), monospace;
   font-size: 0.88em;
-  background: rgba(148, 163, 184, 0.12);
+  background: var(--fill-muted);
   padding: 0.15em 0.4em;
   border-radius: 4px;
 }
@@ -161,7 +161,7 @@
   overflow-x: auto;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--code-bg);
 }
 
 .prose :global(pre code) {
@@ -192,5 +192,5 @@
 
 .prose :global(th) {
   color: var(--text-heading);
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--fill-muted);
 }

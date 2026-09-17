@@ -10,6 +10,7 @@ import {
   useState,
   type KeyboardEvent,
 } from "react";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 import styles from "./PublicationNav.module.css";
 
 export type PublicationNavActive =
@@ -279,6 +280,9 @@ export default function PublicationNav({ activeNav }: PublicationNavProps) {
             >
               About
             </Link>
+          </div>
+          <div className={styles.drawerTheme}>
+            <ThemeToggle showLabel />
           </div>
         </nav>
       </div>

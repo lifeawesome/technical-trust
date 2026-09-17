@@ -109,9 +109,9 @@ function CellContent({
           initial={false}
           whileInView={{
             boxShadow: [
-              "0 0 0 0 rgba(245, 158, 11, 0)",
-              "0 0 0 3px rgba(245, 158, 11, 0.35)",
-              "0 0 0 0 rgba(245, 158, 11, 0)",
+              "0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent)",
+              "0 0 0 3px var(--accent-border)",
+              "0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent)",
             ],
           }}
           viewport={{ once: true, margin: "-8% 0px" }}

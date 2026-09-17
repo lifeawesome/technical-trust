@@ -28,7 +28,7 @@ export default function BackgroundMesh() {
             y1={edge.y1}
             x2={edge.x2}
             y2={edge.y2}
-            stroke="#334155"
+            stroke="var(--mesh-stroke)"
             strokeWidth={1}
           />
         ))}
@@ -39,7 +39,7 @@ export default function BackgroundMesh() {
             cx={node.x}
             cy={node.y}
             r={node.r}
-            style={{ fill: node.accent ? "var(--accent)" : "#475569" }}
+            style={{ fill: node.accent ? "var(--accent)" : "var(--mesh-node)" }}
           />
         ))}
       </svg>

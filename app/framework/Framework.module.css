@@ -99,26 +99,26 @@
 }
 
 .swatchPattern {
-  background: rgba(30, 41, 59, 0.95);
-  border: 1px solid rgba(245, 158, 11, 0.55);
+  background: var(--surface-solid);
+  border: 1px solid var(--accent-border-strong);
 }
 
 .swatchFieldGuide {
   background: transparent;
-  border: 1px solid rgba(245, 158, 11, 0.7);
+  border: 1px solid var(--accent-border-strong);
 }
 
 .swatchOpen {
   background: transparent;
-  border: 1px dashed rgba(148, 163, 184, 0.35);
+  border: 1px dashed var(--border-dashed);
 }
 
 .participation {
   max-width: 36rem;
   margin-bottom: clamp(48px, 7vw, 72px);
   padding: 28px 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.12);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .sectionHeading {
@@ -143,7 +143,7 @@
 }
 
 .participationLink:hover {
-  color: color-mix(in srgb, var(--accent) 80%, white);
+  color: var(--link-hover);
 }
 
 .changelog {

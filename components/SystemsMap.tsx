@@ -32,7 +32,7 @@ export default function SystemsMap() {
             y1={edge.y1}
             x2={edge.x2}
             y2={edge.y2}
-            stroke="#64748b"
+            stroke="var(--mesh-stroke)"
             strokeWidth={1}
           />
         ))}
@@ -42,7 +42,7 @@ export default function SystemsMap() {
             cx={node.x}
             cy={node.y}
             r={node.r}
-            fill={node.accent ? "#f59e0b" : "#475569"}
+            fill={node.accent ? "var(--accent)" : "var(--mesh-node)"}
           />
         ))}
       </motion.svg>

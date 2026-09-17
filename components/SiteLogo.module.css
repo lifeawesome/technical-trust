@@ -1,0 +1,28 @@
+.wrap {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.mark {
+  width: 32px;
+  height: auto;
+}
+
+.light {
+  display: block;
+}
+
+.dark {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .light {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .dark {
+  display: block;
+}
