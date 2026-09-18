@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="628" viewBox="0 0 1200 628" role="img" aria-labelledby="title desc">
+  <title id="title">Technical Trust Demo Sprint</title>
+  <desc id="desc">Technical Trust Demo Sprint, $1,250. In one sprint: a buyer-specific demo and evaluation package.</desc>
+  <rect width="1200" height="628" fill="#0b1623"/>
+  <rect x="0" y="620" width="1200" height="8" fill="#f0a11f"/>
+  <g transform="translate(1118 28) scale(0.22)" aria-hidden="true">
+    <defs>
+      <path id="segment" d="M138 30a98 98 0 0 1 88 88l-32 5a66 66 0 0 0-60-61z"/>
+    </defs>
+    <use href="#segment" fill="#F0A11F"/>
+    <use href="#segment" transform="rotate(90 128 128)" fill="#E4EBF1"/>
+    <use href="#segment" transform="rotate(180 128 128)" fill="#B8791C"/>
+    <use href="#segment" transform="rotate(270 128 128)" fill="#96A6B6"/>
+    <path fill="#F0A11F" d="M101 101h22v22h-22zm32 32h22v22h-22z"/>
+    <path fill="#D9E2EA" d="M133 101h22v22h-22zm-32 32h22v22h-22z"/>
+  </g>
+  <text x="72" y="96" fill="#f0a11f" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="3.2">STUDIO</text>
+  <text x="1096" y="100" text-anchor="end" fill="#f0a11f" font-family="Inter, Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="-0.8">$1,250</text>
+  <text x="72" y="186" fill="#ffffff" font-family="Inter, Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="-1">Technical Trust Demo Sprint</text>
+  <text x="72" y="254" fill="#e4ebf1" font-family="Inter, Arial, Helvetica, sans-serif" font-size="24" font-weight="500">The product is technically strong.</text>
+  <text x="72" y="292" fill="#e4ebf1" font-family="Inter, Arial, Helvetica, sans-serif" font-size="24" font-weight="500">The conversation keeps going sideways.</text>
+  <text x="72" y="356" fill="#96a6b6" font-family="Inter, Arial, Helvetica, sans-serif" font-size="22">In one sprint: a buyer-specific demo and evaluation package.</text>
+  <text x="72" y="408" fill="#e4ebf1" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18">Discovery interview · Two edited videos · Architecture visual · Evaluation guide</text>
+  <rect x="72" y="456" width="268" height="54" rx="8" fill="#f0a11f"/>
+  <text x="206" y="490" text-anchor="middle" fill="#1a1206" font-family="Inter, Arial, Helvetica, sans-serif" font-size="17" font-weight="700">See the Demo Sprint →</text>
+  <text x="72" y="560" fill="#60778a" font-family="Inter, Arial, Helvetica, sans-serif" font-size="16">technicaltrust.org/studio</text>
+</svg>

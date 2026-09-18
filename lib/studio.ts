@@ -48,6 +48,21 @@ export const studio = {
       "Public case-study use requires written permission.",
     ],
   },
+  widget: {
+    hook: [
+      "The product is technically strong.",
+      "The conversation keeps going sideways.",
+    ],
+    pitch: "In one sprint: a buyer-specific demo and evaluation package.",
+    includes: [
+      "Discovery interview",
+      "Two edited videos",
+      "Architecture visual",
+      "Evaluation guide",
+    ],
+    ctaLabel: "See the Demo Sprint",
+    href: "/studio",
+  },
   sections: {
     included: "What's included",
     notIncluded: "Quoted separately",

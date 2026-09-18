@@ -20,6 +20,10 @@ export const KIT_SNIPPET_LIVE_BODY_NAME = "TT · Pattern Live · Body";
 /** Kit auto-key from first create; rename does not change this. */
 export const KIT_SNIPPET_LIVE_BODY_KEY = "pattern-live-notify-body";
 
+export const KIT_SNIPPET_STUDIO_WIDGET_NAME = "TT · Studio · Demo Sprint";
+/** Kit auto-key from first create; rename does not change this. */
+export const KIT_SNIPPET_STUDIO_WIDGET_KEY = "tt-studio-demo-sprint";
+
 /** Waitlist tag — notify when Pattern publishes. */
 export function patternWaitlistTagName(slug: string): string {
   return `pattern-${slug}-waitlist`;
