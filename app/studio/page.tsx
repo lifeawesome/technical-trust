@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL } from "@/lib/content";
+import StudioInquiryForm from "@/components/studio/StudioInquiryForm";
 import { studio } from "@/lib/studio";
 import styles from "@/components/branches/Branch.module.css";
 
@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function StudioPage() {
+  const offer = studio.primaryOffer;
+
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
@@ -20,11 +22,49 @@ export default function StudioPage() {
 
       <section className={styles.section} aria-labelledby="sprint-heading">
         <h2 id="sprint-heading" className={styles.sectionHeading}>
-          {studio.primaryOffer.name}
+          {offer.name}
         </h2>
-        <p className={styles.sectionIntro}>{studio.primaryOffer.pitch}</p>
+        <p className={styles.price}>{offer.priceLabel}</p>
+        <p className={styles.sectionIntro}>{offer.pitch}</p>
+        <p className={styles.quote}>{offer.quote}</p>
+      </section>
+
+      <section className={styles.sectionWide} aria-labelledby="included-heading">
+        <div className={styles.split}>
+          <div>
+            <h2 id="included-heading" className={styles.sectionHeading}>
+              {studio.sections.included}
+            </h2>
+            <ul className={styles.list}>
+              {offer.deliverables.map((item) => (
+                <li key={item} className={styles.listItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className={styles.note}>{offer.timeline}</p>
+          </div>
+          <div>
+            <h2 id="excluded-heading" className={styles.sectionHeading}>
+              {studio.sections.notIncluded}
+            </h2>
+            <ul className={styles.list}>
+              {offer.notIncluded.map((item) => (
+                <li key={item} className={styles.listItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="terms-heading">
+        <h2 id="terms-heading" className={styles.sectionHeading}>
+          {studio.sections.terms}
+        </h2>
         <ul className={styles.list}>
-          {studio.primaryOffer.deliverables.map((item) => (
+          {offer.terms.map((item) => (
             <li key={item} className={styles.listItem}>
               {item}
             </li>
@@ -47,7 +87,7 @@ export default function StudioPage() {
 
       <section className={styles.section} aria-labelledby="clients-heading">
         <h2 id="clients-heading" className={styles.sectionHeading}>
-          A fit for
+          {studio.sections.clients}
         </h2>
         <ul className={styles.list}>
           {studio.idealClients.map((item) => (
@@ -60,11 +100,9 @@ export default function StudioPage() {
 
       <section className={styles.section} aria-labelledby="later-heading">
         <h2 id="later-heading" className={styles.sectionHeading}>
-          Later offers
+          {studio.sections.later}
         </h2>
-        <p className={styles.sectionIntro}>
-          Not for sale yet. Named so the road is visible.
-        </p>
+        <p className={styles.sectionIntro}>{studio.sections.laterLede}</p>
         <ul className={styles.list}>
           {studio.futureOffers.map((item) => (
             <li key={item} className={styles.listItem}>
@@ -74,19 +112,16 @@ export default function StudioPage() {
         </ul>
       </section>
 
-      <section className={styles.section} aria-labelledby="contact-heading">
+      <section
+        id="start-a-project"
+        className={styles.section}
+        aria-labelledby="contact-heading"
+      >
         <h2 id="contact-heading" className={styles.sectionHeading}>
           {studio.contact.heading}
         </h2>
         <p className={styles.sectionIntro}>{studio.contact.lede}</p>
-        <div className={styles.ctas}>
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Studio inquiry — Demo Sprint")}`}
-            className={styles.ctaPrimary}
-          >
-            {studio.contact.ctaLabel} →
-          </a>
-        </div>
+        <StudioInquiryForm />
       </section>
     </div>
   );

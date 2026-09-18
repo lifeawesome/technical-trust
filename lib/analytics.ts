@@ -70,3 +70,11 @@ export function trackPatternWaitlistSignup({
   });
   trackSubscribeSuccess(`pattern_waitlist_${patternSlug}`);
 }
+
+export function trackStudioInquiry() {
+  sendGTMEvent({
+    event: "generate_lead",
+    method: "form",
+    lead_source: "studio_demo_sprint",
+  });
+}

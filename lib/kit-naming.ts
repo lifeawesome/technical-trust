@@ -8,6 +8,7 @@ import type { Pattern } from "@/lib/patterns";
 
 export const KIT_DIAGNOSTIC_TAG = "trust-map-diagnostic";
 export const KIT_PATTERN_PUBLISHED_TAG = "pattern-published";
+export const KIT_STUDIO_INQUIRY_TAG = "studio-demo-sprint";
 
 export const KIT_BROADCAST_PREVIEW =
   "You asked to know when this Pattern published.";

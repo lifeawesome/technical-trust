@@ -186,20 +186,17 @@ export default async function Home() {
             {studio.name}
           </h2>
           <p className={styles.offerName}>{studio.primaryOffer.name}</p>
+          <p className={styles.offerPrice}>{studio.primaryOffer.priceLabel}</p>
           <p className={styles.bodyText}>{studio.primaryOffer.pitch}</p>
-          <ul className={styles.deliverableList}>
-            {studio.primaryOffer.deliverables.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <p className={styles.bodyText}>{studio.primaryOffer.includeLine}</p>
           <TrackedCtaLink
             href="/studio"
             className={styles.ctaPrimary}
             ctaId="home_studio_offer"
-            ctaText="See the Demo Sprint"
+            ctaText={studio.primaryOffer.ctaLabel}
             location="homepage_studio"
           >
-            See the Demo Sprint →
+            {studio.primaryOffer.ctaLabel} →
           </TrackedCtaLink>
         </section>
 
@@ -248,6 +245,7 @@ export default async function Home() {
             {home.studioContact.heading}
           </h2>
           <p className={styles.subscribeLede}>{home.studioContact.lede}</p>
+          <p className={styles.offerPrice}>{studio.primaryOffer.priceLabel}</p>
           <TrackedCtaLink
             href={home.studioContact.cta.href}
             className={styles.ctaPrimary}

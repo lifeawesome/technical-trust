@@ -56,7 +56,7 @@ export const home = {
   },
   studioContact: {
     heading: "Work with Studio",
-    lede: "If the product is technically strong and hard to explain, start with a Demo Sprint.",
+    lede: "If the product is technically strong and hard to explain, start with a Demo Sprint. The first paid Studio offer.",
     cta: { href: "/studio", label: "See the Demo Sprint" },
   },
 } as const;

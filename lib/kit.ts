@@ -79,6 +79,38 @@ export async function tagKitSubscriber(apiKey: string, tagId: string, emailAddre
   throw new Error(await parseKitError(response));
 }
 
+type KitTag = { id?: number; name?: string };
+type KitTagsResponse = {
+  tags?: KitTag[];
+  pagination?: { has_next_page?: boolean; end_cursor?: string };
+};
+
+async function findKitTagId(apiKey: string, name: string): Promise<string | null> {
+  let after: string | undefined;
+
+  for (let page = 0; page < 10; page += 1) {
+    const url = new URL(`${KIT_API_BASE}/tags`);
+    url.searchParams.set("per_page", "50");
+    if (after) url.searchParams.set("after", after);
+
+    const response = await fetch(url, { headers: kitHeaders(apiKey) });
+    if (!response.ok) {
+      throw new Error(await parseKitError(response));
+    }
+
+    const data = (await response.json()) as KitTagsResponse;
+    const match = data.tags?.find((tag) => tag.name === name && tag.id);
+    if (match?.id) return String(match.id);
+
+    if (!data.pagination?.has_next_page || !data.pagination.end_cursor) {
+      break;
+    }
+    after = data.pagination.end_cursor;
+  }
+
+  return null;
+}
+
 /**
  * Create or fetch a Kit tag by name (idempotent).
  * Returns the numeric tag id as a string.
@@ -90,16 +122,15 @@ export async function ensureKitTag(apiKey: string, name: string): Promise<string
     body: JSON.stringify({ name }),
   });
 
-  if (response.status !== 200 && response.status !== 201) {
-    throw new Error(await parseKitError(response));
+  if (response.status === 200 || response.status === 201) {
+    const data = (await response.json()) as { tag?: { id?: number } };
+    if (data.tag?.id) return String(data.tag.id);
   }
 
-  const data = (await response.json()) as { tag?: { id?: number } };
-  if (!data.tag?.id) {
-    throw new Error(`Kit tag create returned no id for "${name}"`);
-  }
+  const existing = await findKitTagId(apiKey, name);
+  if (existing) return existing;
 
-  return String(data.tag.id);
+  throw new Error(await parseKitError(response));
 }
 
 /** Ensure tag exists, then apply it to a subscriber (must already exist). */
